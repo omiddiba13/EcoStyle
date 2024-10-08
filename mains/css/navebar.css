@@ -1,0 +1,116 @@
+#navbarMain {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	z-index: +1;
+	margin-bottom: 0;
+	margin-top: 7%;
+}
+/* تنظیمات navbar */
+.SYnav {
+	display: flex;
+	justify-content: space-evenly;
+	position: relative;
+	width: 600px;
+	padding: 10px;
+	border-bottom: 2px solid var(--nav-border-color);
+	border-radius: 2px;
+}
+/* نوار ناوبری برای دستگاه‌های کوچک */
+.mobile-nav {
+	position: absolute;
+	display: none;
+	background-color: var(--mobile-nav-bg-color);
+	margin: 0;
+	padding: 7px;
+	margin: 2px;
+	border-radius: 20px;
+}
+
+.mobile-nav .menu-icon {
+	cursor: pointer;
+	transition: transform 1000ms var(--transition-ease);
+	width: 100%;
+}
+
+.mobile-nav ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	transition: var(--transition-duration) var(--transition-ease);
+	overflow: hidden;
+	border-radius: 20px;
+}
+
+.mobile-nav ul li {
+	border-bottom: 1px solid var(--mobile-nav-border-color);
+}
+
+.mobile-nav ul li a {
+	text-decoration: none;
+	color: white;
+	padding: 10px;
+	display: block;
+}
+
+.mobile-nav ul li a:hover {
+	background-color: var(--mobile-nav-hover-bg-color);
+}
+
+/* پنهان کردن منو در حالت پیش‌فرض */
+.hidden {
+	display: none;
+	height: 0;
+}
+
+/* نمایش نوار ناوبری در دستگاه‌های کوچک */
+.open {
+	height: auto;
+}
+
+.mobile-nav ul.open {
+	animation: slideDown 0.5s forwards;
+}
+
+.mobile-nav ul.hidden {
+	animation: slideUp 0.5s forwards;
+}
+
+@media only screen and (max-width: 800px) {
+	.SYnav {
+		display: none;
+	}
+	.mobile-nav {
+		display: block;
+		justify-content: end;
+	}
+	#navbarMain {
+		align-items: start;
+		justify-content: end;
+		margin-bottom: 25%;
+		margin-top: 0;
+	}
+}
+
+/* انیمیشن نوار ناوبری موبایل */
+@keyframes slideDown {
+	0% {
+		transform: translateY(-50%);
+		opacity: 0;
+	}
+	100% {
+		transform: translateY(0);
+		opacity: 1;
+	}
+}
+
+@keyframes slideUp {
+	0% {
+		transform: translateY(0);
+		opacity: 1;
+	}
+	100% {
+		transform: translateY(-100%);
+		opacity: 0;
+	}
+}

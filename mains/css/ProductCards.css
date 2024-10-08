@@ -1,0 +1,85 @@
+/* تنظیمات مربوط به کارت‌ها */
+.product-container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around; /* کارت‌ها را به طور مساوی توزیع می‌کند */
+	margin: 20px;
+}
+
+.product-card {
+	background-color: #fff;
+	border-radius: 10px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	margin: 10px;
+	padding: 10px;
+	flex: 1 1 calc(25% - 20px); /* تنظیم عرض کارت‌ها برای نمایش 4 کارت در هر ردیف */
+	max-width: 300px;
+	text-align: center;
+	transition: transform 0.3s;
+	min-height: 160px; /* تنظیم حداقل ارتفاع برای یکسان کردن ارتفاع کارت‌ها */
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.product-card:hover {
+	transform: scale(1.05);
+}
+
+.product-card img {
+	width: 152px;
+	border-radius: 10px;
+
+	height: 152px; /* تغییر ارتفاع تصاویر به auto برای حفظ نسبت */
+	object-fit: contain; /* برای برش مناسب تصاویر */
+}
+
+.product-card h3 {
+	margin: 15px 0;
+	font-size: 18px;
+	color: #333;
+}
+
+.price {
+	font-size: 16px;
+	color: #666;
+	margin-bottom: 10px;
+}
+
+.add-to-cart {
+	background-color: #ff6f61;
+	color: #fff;
+	border: none;
+	padding: 10px 15px;
+	border-radius: 5px;
+	cursor: pointer;
+	font-size: 14px;
+	transition: background-color 0.3s;
+}
+
+.add-to-cart:hover {
+	background-color: #ff4a3d;
+}
+
+/* واکنش‌گرایی برای دستگاه‌های کوچکتر از 1024px: نمایش 3 کارت در هر ردیف */
+@media (max-width: 1024px) {
+	.product-card {
+		flex: 1 1 calc(33.33% - 20px); /* تنظیم عرض کارت‌ها برای نمایش 3 کارت در هر ردیف */
+	}
+}
+
+/* واکنش‌گرایی برای دستگاه‌های کوچکتر از 768px: نمایش 2 کارت در هر ردیف */
+@media (max-width: 768px) {
+	.product-card {
+		flex: 1 1 calc(50% - 20px); /* تنظیم عرض کارت‌ها برای نمایش 2 کارت در هر ردیف */
+	}
+}
+
+/* واکنش‌گرایی برای دستگاه‌های کوچکتر از 480px: نمایش 1 کارت در هر ردیف */
+@media (max-width: 480px) {
+	.product-card {
+		flex: 1 1 100%; /* تنظیم عرض کارت‌ها برای نمایش 1 کارت در هر ردیف */
+		max-width: 100%;
+	}
+}

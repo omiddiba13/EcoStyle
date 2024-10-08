@@ -1,0 +1,34 @@
+.swiper-container {
+	width: 100%;
+	overflow: hidden;
+	height: 50%;
+}
+
+.swiper-wrapper {
+	display: flex;
+	transition: transform 0.5s ease;
+}
+
+.swiper-slide {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-width: 100%;
+	box-sizing: border-box;
+}
+
+.swiper-slide img {
+	width: 100%;
+	height: auto; /* حفظ نسبت تصویر */
+	display: block;
+	aspect-ratio: 2.5/1;
+
+	/* جلوگیری از فاصله اضافی زیر تصویر */
+}
+@media (max-width: 875px) {
+	.swiper-slide img {
+		aspect-ratio: 2.5/1.5;
+		width: 100%;
+		height: auto;
+	}
+}

@@ -1,0 +1,33 @@
+:root {
+	--main-bg-color: #f7ede2;
+	--nav-border-color: rgba(2, 2, 2, 0.575);
+	--link-color: black;
+	--link-hover-color: #fff;
+	--button-bg-color: #1d4138a8;
+	--button-hover-bg-color: #b96520c5;
+	--mobile-nav-bg-color: #4242426e;
+	--mobile-nav-hover-bg-color: var(
+		--button-hover-bg-color
+	); /* استفاده از متغیر */
+	--mobile-nav-border-color: #444;
+	--transition-duration: 0.3s;
+	--transition-ease: ease-in-out;
+	--text-color-body: #333;
+	--background-color-section: #f4f4f4;
+	--background-color-content: #fff;
+	--box-shadow-light: 0 6px 20px rgba(0, 0, 0, 0.1);
+	--box-shadow-medium: 0 4px 15px rgba(0, 0, 0, 0.1);
+	--primary-color: #f28482;
+	--secondary-color: #555;
+	--button-hover-color: #f06565;
+	--border-radius: 15px;
+	--font-size-h2: 3rem;
+	--font-size-p: 1.2rem;
+	--line-height-p: 1.8;
+	--padding-section: 3rem; /* استفاده از rem به جای px */
+	--padding-content: 3rem; /* استفاده از rem به جای px */
+	--padding-mobile: 1.875rem; /* معادل 30px */
+	--transition-speed: var(--transition-duration); /* استفاده از متغیر */
+	--dark-bg-color: #333; /* اضافه کردن حالت تیره */
+	--dark-text-color: #f7ede2;
+}
