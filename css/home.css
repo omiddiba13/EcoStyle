@@ -20,7 +20,7 @@ a {
 }
 .bgCover {
 	background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2)),
-		url(/imeges/vecteezy_ai-generated-beautiful-sunset-over-the-sea-colorful-sky-and_36750376.jpeg);
+		url(imeges/vecteezy_ai-generated-beautiful-sunset-over-the-sea-colorful-sky-and_36750376.jpeg);
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center;
