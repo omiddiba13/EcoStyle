@@ -30,4 +30,5 @@
 	--transition-speed: var(--transition-duration); /* استفاده از متغیر */
 	--dark-bg-color: #333; /* اضافه کردن حالت تیره */
 	--dark-text-color: #f7ede2;
+	--bg: url(/images/bg.jpeg);
 }
