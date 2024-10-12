@@ -2,6 +2,7 @@ function About() {
 	innerHTML = "";
 	const about = document.getElementById("aboutSction");
 	const swiper = document.getElementById("swiperSection");
+	document.getElementById("ProductCard").style.display = "none";
 	swiper.style.display = "none";
 
 	document.getElementById("contactPage").style.display = "none";

@@ -6,6 +6,7 @@ function contactUsPage() {
 	document.getElementById("aboutSction").style.display = "none";
 	const swiper = document.getElementById("swiperSection");
 	swiper.style.display = "none";
+	document.getElementById("ProductCard").style.display = "none";
 
 	// اضافه کردن محتوای صفحه تماس
 	contactPage.innerHTML = `

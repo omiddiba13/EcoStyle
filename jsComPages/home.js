@@ -1,6 +1,7 @@
 function home() {
 	document.getElementById("aboutSction").style.display = "none";
 	document.getElementById("contactPage").style.display = "none";
+	document.getElementById("ProductCard").style.display = "block";
 	swiper();
 	category();
 	ProductCards();

@@ -12,19 +12,42 @@
 		<link rel="stylesheet" href="css/contactUs.css" />
 		<link rel="stylesheet" href="css/ProductCards.css" />
 		<link rel="stylesheet" href="css/category.css" />
+		<link rel="stylesheet" href="css/basket.css" />
 		<link
 			rel="stylesheet"
 			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+		<script
+			src="https://kit.fontawesome.com/a052ba504f.js"
+			crossorigin="anonymous"></script>
 	</head>
 	<body>
 		<header>
 			<div class="lag">
-				<button onclick="changeLanguage('fa')">fa</button>
-				<button onclick="changeLanguage('en')">English</button>
-				<button class="search-button">
-					<i class="fas fa-search"></i>
-				</button>
+				<div class="language-buttons">
+					<button onclick="changeLanguage('fa')">fa</button>
+					<button onclick="changeLanguage('en')">English</button>
+				</div>
+
+				<div class="search-cart">
+					<button class="search-button">
+						<i class="fas fa-search"></i>
+					</button>
+					<button id="basket-icon">
+						<i class="fa-solid fa-basket-shopping"></i>
+						<span id="basket-count">0</span>
+						<!-- تعداد محصولات در سبد -->
+					</button>
+				</div>
+
+				<!-- پاپ‌آپ سبد خرید -->
+				<div id="basket-popup" class="basket-popup" style="display: none">
+					<h3>Your Basket</h3>
+					<div id="basket-items"></div>
+					<p>Total: $<span id="total-price">0.00</span></p>
+					<button id="close-basket">Close</button>
+				</div>
 			</div>
+
 			<div class="bgCover">
 				<div class="logo">
 					<h1>EcoStyle</h1>
@@ -38,6 +61,8 @@
 			<div id="aboutSction"></div>
 			<div id="category"><div id="ProductCard"></div></div>
 		</section>
+		<!-- js -->
+		<script src="jsComPages/jsComponent/basket.js"></script>
 		<script src="jsComPages/jsComponent/lang.js"></script>
 		<script src="jsComPages/jsComponent/navBar.js"></script>
 		<script src="jsComPages/home.js"></script>

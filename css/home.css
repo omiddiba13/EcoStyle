@@ -50,13 +50,28 @@ li {
 .lag {
 	position: absolute;
 	display: flex;
+	flex-direction: column; /* بخش زبان‌ها بالای بخش دیگر قرار می‌گیرد */
 	align-items: flex-start;
-	justify-content: start;
 	z-index: 2;
 	margin-top: 5px;
 }
-.lag button {
-	margin-left: 2px;
+
+.language-buttons {
+	display: flex;
+	justify-content: start;
+	gap: 10px; /* فاصله بین دکمه‌های زبان */
+	margin-bottom: 10px; /* فاصله‌ای بین بخش زبان و جستجو/سبد */
+}
+
+.search-cart {
+	display: flex;
+	align-items: center; /* هم‌ترازی عمودی دکمه‌های جستجو و سبد */
+	gap: 10px; /* فاصله بین آیکن جستجو و لینک سبد خرید */
+}
+
+.basket-link {
+	text-decoration: none;
+	font-weight: bold;
 }
 
 button {
@@ -74,4 +89,7 @@ button {
 button:hover {
 	background-color: var(--button-hover-bg-color);
 	transform: scale(1.05);
+}
+a {
+	cursor: pointer;
 }

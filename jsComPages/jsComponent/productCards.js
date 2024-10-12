@@ -22,4 +22,11 @@ function ProductCards(products) {
 		// افزودن کارت‌ها به container
 		container.innerHTML += productCard; // فقط کارت‌ها را به container اضافه می‌کنیم
 	});
+	let addToCartButtons = document.querySelectorAll(".add-to-cart");
+	addToCartButtons.forEach((button, index) => {
+		button.addEventListener("click", () => {
+			addToBasket(products[index]); // محصول را به سبد خرید اضافه می‌کنیم
+		});
+	});
 }
+renderBasket();
