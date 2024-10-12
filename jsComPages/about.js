@@ -14,7 +14,6 @@ function About() {
     <div class="aboutContent">
         <h2 id="aboutUsH2">درباره ما</h2>
         <p id="aboutUsText"></p>
-        <img src="https://ibolak.com/storage/image/2023/12/1701842323-5IgVR5VQjqZVZ9t3.jpg" alt="Fashion Image" class="about-image">
     </div>
 </section>
 

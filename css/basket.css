@@ -1,9 +1,64 @@
 .basket-popup {
-	width: 50%;
-	height: auto;
+	width: 200px;
+	height: 400px;
 	margin-left: 10px;
-	padding: 20px;
+	padding: 5px;
 	border-radius: 20px;
 	background-color: #fff;
 	color: black;
+
+	overflow: auto; /* فعال کردن اسکرول داخلی */
+	scrollbar-width: none; /* برای فایرفاکس */
+	-ms-overflow-style: none;
+}
+.basket-popup ::-webkit-scrollbar {
+	display: none;
+}
+.basket-item {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+	justify-content: center;
+	padding: 15px;
+	margin-bottom: 15px;
+	border-radius: 10px;
+	background-color: #fff;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* سایه ملایم برای جذابیت */
+	transition: transform 0.2s ease-in-out;
+	border: 1px solid #f0f0f0;
+}
+
+.basket-item:hover {
+	transform: scale(1.02); /* کمی بزرگتر شدن هنگام هاور */
+}
+.basket-item span {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+.imgBasket {
+	width: 40px;
+	border-radius: 5px;
+	height: 40px; /* تغییر ارتفاع تصاویر به auto برای حفظ نسبت */
+	object-fit: contain; /* برای برش مناسب تصاویر */
+	padding: 5px;
+}
+
+.basket-item h4 {
+	margin: 0;
+	font-size: 17px;
+	color: #333;
+	font-weight: 600;
+}
+
+.basket-item p {
+	font-size: 14px;
+	color: #555;
+	margin-left: 10px;
+}
+.btnBasket {
+	font-size: small;
+	margin-top: 2px;
 }

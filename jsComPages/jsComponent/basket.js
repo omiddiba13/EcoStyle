@@ -7,7 +7,7 @@ let basketCountElement = document.getElementById("basket-count");
 
 // به‌روزرسانی سبد خرید در صفحه
 function renderBasket() {
-	basketItemsElement.innerHTML = "";
+	basketItemsElement.innerHTML = ``;
 	let total = 0;
 
 	if (basket.length === 0) {
@@ -17,10 +17,10 @@ function renderBasket() {
 			total += item.price * item.quantity;
 			basketItemsElement.innerHTML += `
                 <div class="basket-item">
-                    <span>${item.title} (${item.quantity} x $${item.price})</span>
-                    <div>
-                        <button onclick="increaseQuantity(${index})">+</button>
-                        <button onclick="decreaseQuantity(${index})">-</button>
+                    <span> <img class="imgBasket" src="${item.image}" alt=""> <h4>${item.title} </h4> (${item.quantity} x $${item.price})</span>
+                    <div class="btnBasket">
+                        <button onclick="increaseQuantity(${index})"><i class="fa-solid fa-plus"></i></button>
+                        <button onclick="decreaseQuantity(${index})"><i class="fa-solid fa-minus"></i></button>
                     </div>
                 </div>
             `;
