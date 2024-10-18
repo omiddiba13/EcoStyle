@@ -22,3 +22,6 @@
 	margin: 0 auto;
 	margin-top: 10px; /* مرکز کردن خط */
 }
+.no-select a {
+	user-select: none; /* غیرفعال کردن انتخاب متن */
+}

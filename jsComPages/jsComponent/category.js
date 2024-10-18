@@ -2,7 +2,7 @@ function category() {
 	let cards = document.getElementById("ProductCard");
 	cards.innerHTML = `
        
-        <div class="category">
+        <div class="category no-select">
             <a onclick="jewelery()">jewelery</a>
             <a onclick="womanCategory()">woman</a>
             <a onclick="mansCategory()">man</a>
@@ -35,3 +35,4 @@ function jewelery() {
 			ProductCards(json);
 		});
 }
+womanCategory();
