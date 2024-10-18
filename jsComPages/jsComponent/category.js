@@ -36,3 +36,9 @@ function jewelery() {
 		});
 }
 womanCategory();
+document.querySelectorAll("a").forEach((link) => {
+	link.addEventListener("click", function (event) {
+		event.preventDefault(); // جلوگیری از عملکرد پیش‌فرض (مثل تغییر مسیر)
+		// اجرای عملکرد مورد نظر شما
+	});
+});

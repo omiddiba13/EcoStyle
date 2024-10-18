@@ -93,3 +93,24 @@ button:hover {
 a {
 	cursor: pointer;
 }
+
+.no-select {
+	-webkit-user-select: none; /* برای مرورگرهای WebKit */
+	-moz-user-select: none; /* برای مرورگرهای Firefox */
+	-ms-user-select: none; /* برای مرورگرهای قدیمی‌تر IE */
+	user-select: none;
+}
+.no-select a {
+	-webkit-user-select: none; /* برای مرورگرهای WebKit */
+	-moz-user-select: none; /* برای مرورگرهای Firefox */
+	-ms-user-select: none; /* برای مرورگرهای قدیمی‌تر IE */
+	user-select: none;
+}
+a {
+	-webkit-tap-highlight-color: rgba(
+		0,
+		0,
+		0,
+		0
+	); /* غیرفعال کردن هایلایت در دستگاه‌های لمسی */
+}

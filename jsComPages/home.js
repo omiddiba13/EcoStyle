@@ -4,6 +4,7 @@ function home() {
 	document.getElementById("ProductCard").style.display = "block";
 	swiper();
 	category();
+	womanCategory();
 	ProductCards();
 	const currentLang = localStorage.getItem("selectedLanguage") || "en";
 	changeLanguage(currentLang);
