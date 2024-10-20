@@ -10,9 +10,9 @@ function ProductCards(products) {
 	let container = document.querySelector(".product-container");
 
 	// حلقه روی محصولات و ساخت کارت‌ها
-	products.forEach((product) => {
+	products.forEach((product, index) => {
 		let productCard = `
-            <div class="product-card">
+            <div class="product-card" data-index="${index}">
                 <img src="${product.image}" alt="${product.title}" />
                 <h3>${product.title}</h3>
                 <p class="price">$${product.price}</p>
@@ -20,13 +20,25 @@ function ProductCards(products) {
             </div>
         `;
 		// افزودن کارت‌ها به container
-		container.innerHTML += productCard; // فقط کارت‌ها را به container اضافه می‌کنیم
+		container.innerHTML += productCard;
 	});
+
+	// product page
+	let productCards = document.querySelectorAll(".product-card");
+	productCards.forEach((card, index) => {
+		card.addEventListener("click", () => {
+			showProductDetails(products[index]); // نمایش اطلاعات بیشتر محصول
+		});
+	});
+
 	let addToCartButtons = document.querySelectorAll(".add-to-cart");
 	addToCartButtons.forEach((button, index) => {
-		button.addEventListener("click", () => {
+		button.addEventListener("click", (event) => {
+			event.stopPropagation(); // جلوگیری از اجرای رویداد کلیک روی کارت
 			addToBasket(products[index]); // محصول را به سبد خرید اضافه می‌کنیم
 		});
 	});
 }
+
+
 renderBasket();

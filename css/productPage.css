@@ -1,0 +1,103 @@
+/* استایل برای بخش جزئیات محصول */
+.custom-product-details {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	transform: translate(-50%, -50%);
+	background-color: #ffffff;
+	border: 1px solid #ddd;
+	border-radius: 10px;
+	padding: 20px;
+	box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+	z-index: 1000;
+	overflow-y: auto;
+}
+.custom-product-details-overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.5);
+	z-index: 999; /* زیر بخش جزئیات ولی بالاتر از بقیه صفحه */
+}
+
+/* برای تصویر در بخش جزئیات */
+.custom-product-details img {
+	width: 200px;
+	height: 200px; /* تغییر ارتفاع تصاویر به auto برای حفظ نسبت */
+	object-fit: contain;
+}
+
+/* عنوان محصول */
+.custom-product-details h2 {
+	font-size: 22px;
+	margin-bottom: 10px;
+	padding: 5px;
+	color: #000000;
+	text-align: center;
+}
+
+/* توضیحات محصول */
+.custom-product-details .custom-description {
+	font-size: 16px;
+	padding: 10px;
+	color: #555;
+	margin-bottom: 12px;
+	line-height: 1.6;
+	text-align: justify; /* تنظیم متن برای خوانایی بهتر */
+}
+
+/* قیمت محصول */
+.custom-product-details .custom-price {
+	font-size: 18px;
+	color: #e74c3c;
+	font-weight: bold;
+	margin-bottom: 20px;
+	text-align: center;
+}
+
+/* دکمه بستن جزئیات */
+.custom-product-details button.custom-close-details {
+	background-color: #d9534f;
+	color: white;
+	padding: 10px 15px;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	display: block;
+	width: 100%;
+	max-width: 200px;
+	margin: 20px auto 0 auto;
+	text-align: center;
+}
+
+.custom-product-details button.custom-close-details:hover {
+	background-color: #c9302c;
+}
+
+/* افکت تیره کردن صفحه هنگام نمایش جزئیات */
+
+/* استایل‌های ریسپانسیو برای موبایل */
+@media (max-width: 600px) {
+	.custom-product-details {
+		width: 100%;
+		height: 80vh;
+	}
+
+	.custom-product-details h2 {
+		font-size: 20px;
+	}
+
+	.custom-product-details .custom-description {
+		font-size: 14px;
+	}
+
+	.custom-product-details .custom-price {
+		font-size: 16px;
+	}
+}
