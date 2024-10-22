@@ -8,7 +8,7 @@ navbar.innerHTML = `
         <li><a  id="home" onclick="home()"></a></li>
         <li><a  id="about" onclick="About()"></a></li>
         <li><a  id="contact" onclick="contactUsPage()"></a></li>
-        <li><a  id="shop"></a></li>
+        <li><a  id="shop" id="startShop" onclick="startShop()"></a></li>
     </ul>
 </nav>
 
@@ -18,7 +18,7 @@ navbar.innerHTML = `
         <li><a  id="home-mobile" onclick="home()">Home</a></li>
         <li><a  id="about-mobile" onclick="About()">About</a></li>
         <li><a  id="contact-mobile" onclick="contactUsPage()">Contact</a></li>
-        <li><a  id="shop-mobile">Shop</a></li>
+        <li><a  id="shop-mobile" id="startShop" onclick="startShop()">Shop</a></li>
     </ul>
 </nav>
 

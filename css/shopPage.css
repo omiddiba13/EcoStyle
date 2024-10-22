@@ -1,0 +1,68 @@
+/* استایل برای کانتینر shopPage */
+#shoplists {
+	display: flex !important;
+	flex-wrap: wrap; /* برای نمایش کارت‌ها در چند سطر */
+	gap: 20px; /* فاصله بین کارت‌ها */
+	justify-content: center; /* مرکز کردن کارت‌ها */
+	padding: 20px; /* فاصله داخلی برای شیک‌تر شدن صفحه */
+	max-width: 1200px; /* حداکثر عرض کانتینر */
+	margin: 0 auto; /* مرکز کردن کانتینر در صفحه */
+
+	border-radius: 8px; /* گوشه‌های گرد */
+}
+
+/* استایل برای بخش کنترل‌ها (دکمه‌های مرتب‌سازی) */
+#controls {
+	display: flex;
+	align-items: center;
+	justify-content: center; /* تراز کردن دکمه‌ها در وسط */
+	margin-top: 10%; /* فاصله بین کنترل‌ها و shopPage */
+}
+
+#controls button {
+	color: white;
+	border: none;
+	padding: 10px 20px;
+	margin: 0 10px;
+	border-radius: 5px;
+	cursor: pointer;
+	font-size: 16px;
+	transition: background-color 0.3s;
+}
+
+#controls button:hover {
+	background-color: var(--button-hover-bg-color);
+}
+
+/* تنظیمات واکنش‌گرا برای دستگاه‌های کوچکتر */
+@media (max-width: 768px) {
+	#shopPage {
+		padding: 10px;
+		gap: 10px; /* کاهش فاصله بین کارت‌ها در صفحات کوچکتر */
+	}
+
+	#controls button {
+		font-size: 14px;
+		padding: 8px 16px;
+	}
+}
+@media (max-width: 912px) {
+	#controls {
+		margin-top: 25%;
+	}
+}
+@media (max-width: 550px) {
+	#controls {
+		margin-top: 15%;
+	}
+}
+@media (max-width: 414px) {
+	#controls {
+		margin-top: 32%;
+	}
+}
+@media (max-width: 350px) {
+	#controls {
+		margin-top: 40%;
+	}
+}

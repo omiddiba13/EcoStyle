@@ -16,7 +16,9 @@ function mansCategory() {
 	fetch("https://fakestoreapi.com/products/category/men's clothing")
 		.then((res) => res.json())
 		.then((json) => {
-			ProductCards(json); // ارسال داده‌های API به تابع ProductCards
+			ProductCards(json);
+
+			// ارسال داده‌های API به تابع ProductCards
 		});
 }
 
