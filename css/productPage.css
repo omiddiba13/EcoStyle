@@ -14,7 +14,6 @@
 	padding: 20px;
 	box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 	z-index: 1000;
-	overflow-y: auto;
 }
 .custom-product-details-overlay {
 	position: fixed;
@@ -44,14 +43,22 @@
 
 /* توضیحات محصول */
 .custom-product-details .custom-description {
-	font-size: 16px;
+	font-size: medium;
 	padding: 10px;
 	color: #555;
 	margin-bottom: 12px;
-	line-height: 1.6;
+
 	text-align: justify; /* تنظیم متن برای خوانایی بهتر */
 }
-
+.custom-description {
+	overflow-y: scroll;
+	width: auto;
+	height: 150px;
+	padding: 20px;
+	margin: 20px;
+	border: solid 1px black;
+	border-radius: 5px;
+}
 /* قیمت محصول */
 .custom-product-details .custom-price {
 	font-size: 18px;
@@ -86,7 +93,7 @@
 @media (max-width: 600px) {
 	.custom-product-details {
 		width: 100%;
-		height: 80vh;
+		height: 650px;
 	}
 
 	.custom-product-details h2 {
