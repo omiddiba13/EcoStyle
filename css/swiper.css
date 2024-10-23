@@ -1,3 +1,6 @@
+.swiperSection {
+	z-index: -1;
+}
 .swiper-container {
 	width: 100%;
 	overflow: hidden;
@@ -21,13 +24,13 @@
 	width: 100%;
 	height: auto; /* حفظ نسبت تصویر */
 	display: block;
-	aspect-ratio: 2.5/1;
+	aspect-ratio: 3/1.1;
 
 	/* جلوگیری از فاصله اضافی زیر تصویر */
 }
 @media (max-width: 875px) {
 	.swiper-slide img {
-		aspect-ratio: 2.5/1.5;
+		aspect-ratio: 2.8/1.3;
 		width: 100%;
 		height: auto;
 	}

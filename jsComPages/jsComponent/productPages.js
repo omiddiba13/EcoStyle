@@ -7,7 +7,7 @@ function showProductDetails(product) {
             <h2>${product.title}</h2>
             <p class="custom-description">${product.description}</p>
             <p class="custom-price">Price: $${product.price}</p>
-           <button class="add-to-cart">Add to Cart</button>
+            <button class="add-to-cart">Add to Cart</button>
             <button class="custom-close-details">Close</button>
         </div>
     `;

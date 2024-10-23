@@ -1,13 +1,14 @@
 /* استایل فوتر */
 footer {
+	display: flex;
 	background-color: #333;
 	color: white;
 	padding: 20px 0;
 	display: flex;
 	justify-content: space-between;
-	align-items: center;
+	align-items: end;
 	flex-wrap: wrap;
-	text-align: center; ;
+	text-align: center;
 }
 
 /* استایل برای متن فوتر */

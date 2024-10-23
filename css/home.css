@@ -16,6 +16,31 @@ body {
 	user-select: none;
 }
 
+.lag {
+	position: absolute;
+	align-self: flex-start;
+	left: 0;
+	z-index: 3;
+	margin: 2px 0 0 2px;
+}
+.language-buttons {
+	display: flex;
+	justify-content: start;
+	gap: 10px; /* فاصله بین دکمه‌های زبان */
+}
+
+.search-cart {
+	display: flex;
+	align-items: center; /* هم‌ترازی عمودی دکمه‌های جستجو و سبد */
+	gap: 10px;
+	margin-top: 2px; /* فاصله بین آیکن جستجو و لینک سبد خرید */
+}
+
+.basket-link {
+	text-decoration: none;
+	font-weight: bold;
+}
+
 /* لینک‌ها در navbar */
 a {
 	text-decoration: none;
@@ -30,9 +55,7 @@ a {
 	background-repeat: no-repeat;
 	background-position: center;
 	width: 100%;
-	height: 25%;
-	z-index: 0;
-	position: absolute;
+	height: auto;
 }
 .logo {
 	position: relative;
@@ -49,34 +72,6 @@ a:hover {
 /* حذف نقطه‌های لیست */
 li {
 	list-style-type: none;
-}
-
-/* تنظیمات دکمه‌های تغییر زبان */
-.lag {
-	position: absolute;
-	display: flex;
-	flex-direction: column; /* بخش زبان‌ها بالای بخش دیگر قرار می‌گیرد */
-	align-items: flex-start;
-	z-index: 2;
-	margin-top: 5px;
-}
-
-.language-buttons {
-	display: flex;
-	justify-content: start;
-	gap: 10px; /* فاصله بین دکمه‌های زبان */
-	margin-bottom: 10px; /* فاصله‌ای بین بخش زبان و جستجو/سبد */
-}
-
-.search-cart {
-	display: flex;
-	align-items: center; /* هم‌ترازی عمودی دکمه‌های جستجو و سبد */
-	gap: 10px; /* فاصله بین آیکن جستجو و لینک سبد خرید */
-}
-
-.basket-link {
-	text-decoration: none;
-	font-weight: bold;
 }
 
 button {
@@ -118,15 +113,4 @@ a {
 		0,
 		0
 	); /* غیرفعال کردن هایلایت در دستگاه‌های لمسی */
-}
-@media (min-height: 1200px) {
-	.bgCover {
-		width: 100%;
-	}
-}
-@media (max-height: 932px) {
-	.bgCover {
-		width: 100%;
-		height: 25%;
-	}
 }

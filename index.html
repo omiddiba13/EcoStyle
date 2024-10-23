@@ -16,6 +16,7 @@
 		<link rel="stylesheet" href="css/footer.css" />
 		<link rel="stylesheet" href="css/productPage.css" />
 		<link rel="stylesheet" href="css/shopPage.css" />
+		<link rel="stylesheet" href="css/load.css" />
 		<link
 			rel="stylesheet"
 			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
@@ -24,7 +25,9 @@
 			crossorigin="anonymous"></script>
 	</head>
 	<body>
-		<header>
+		<!-- <div id="loader" class="loader"></div> -->
+
+		<header class="bgCover">
 			<div class="lag">
 				<div class="language-buttons">
 					<button onclick="changeLanguage('fa')">fa</button>
@@ -50,33 +53,20 @@
 					<button id="close-basket">Close</button>
 				</div>
 			</div>
-
-			<div class="bgCover">
-				<div class="logo">
-					<h1 class="no-select" onclick="home()">EcoStyle</h1>
-				</div>
-			</div>
+			<nav id="navbarMain"></nav>
 		</header>
-		<nav id="navbarMain"></nav>
+
 		<section>
 			<div id="swiperSection"></div>
 			<div id="contactPage"></div>
 			<div id="aboutSction"></div>
-			<div
-				id="shopPage"
-				style="
-					display: flex;
-					justify-content: center;
-					align-items: center;
-					flex-direction: column;
-				">
-				<div id="shoplists" class=""></div>
-			</div>
+			<div id="shopPage"><div id="shoplists"></div></div>
 			<div id="category"><div id="ProductCard"></div></div>
 			<div id="productPage"></div>
 		</section>
 		<footer id="footer"></footer>
 		<!-- js -->
+		<script src="jsComPages/jsComponent/load.js"></script>
 		<script src="jsComPages/jsComponent/basket.js"></script>
 		<script src="jsComPages/jsComponent/lang.js"></script>
 		<script src="jsComPages/jsComponent/navBar.js"></script>

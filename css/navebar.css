@@ -1,11 +1,12 @@
 #navbarMain {
-	position: relative;
+	position: relative; /* نیاز است تا عنصر فرزند بتواند نسبت به آن موقعیت بگیرد */
 	display: flex;
 	justify-content: center;
-	z-index: +1;
-	margin-bottom: 0;
-	margin-top: 7%;
+	align-items: center;
+	width: 100%;
+	z-index: 2;
 }
+
 /* تنظیمات navbar */
 .SYnav {
 	display: flex;
@@ -16,15 +17,16 @@
 	border-bottom: 2px solid var(--nav-border-color);
 	border-radius: 2px;
 }
-/* نوار ناوبری برای دستگاه‌های کوچک */
+
+/*  */
 .mobile-nav {
+	display: flex;
 	position: absolute;
 	display: none;
 	background-color: var(--mobile-nav-bg-color);
 	margin: 0;
-	padding: 7px;
-	margin: 2px;
-	border-radius: 20px;
+	padding: 10px;
+	border-radius: 5px;
 }
 
 .mobile-nav .menu-icon {
@@ -39,7 +41,6 @@
 	padding: 0;
 	transition: var(--transition-duration) var(--transition-ease);
 	overflow: hidden;
-	border-radius: 20px;
 }
 
 .mobile-nav ul li {
@@ -56,6 +57,13 @@
 .mobile-nav ul li a:hover {
 	background-color: var(--mobile-nav-hover-bg-color);
 }
+.lan-MO {
+	display: flex;
+	justify-content: center;
+	align-items: end;
+	align-self: flex-end;
+	align-content: end;
+}
 
 /* پنهان کردن منو در حالت پیش‌فرض */
 .hidden {
@@ -65,7 +73,8 @@
 
 /* نمایش نوار ناوبری در دستگاه‌های کوچک */
 .open {
-	height: auto;
+	height: 100%;
+	width: 250px;
 }
 
 .mobile-nav ul.open {
@@ -80,6 +89,12 @@
 	.SYnav {
 		display: none;
 	}
+	.logo {
+		display: none;
+	}
+	.language-buttons {
+		display: none;
+	}
 	.mobile-nav {
 		display: block;
 		justify-content: end;
@@ -87,7 +102,7 @@
 	#navbarMain {
 		align-items: start;
 		justify-content: end;
-		margin-bottom: 25%;
+		margin-bottom: 20%;
 		margin-top: 0;
 	}
 }

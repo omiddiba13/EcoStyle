@@ -61,9 +61,3 @@
 		font-size: 0.8rem;
 	}
 }
-@media (max-width: 900px) {
-	.contactMain {
-		margin-top: 20vh;
-		padding: var(--padding-mobile);
-	}
-}

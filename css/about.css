@@ -9,7 +9,6 @@
 .aboutContent {
 	max-width: 900px;
 	text-align: center;
-	margin-top: 10vh;
 	background-color: var(--background-color-content);
 	padding: var(--padding-content);
 	border-radius: var(--border-radius);
@@ -30,29 +29,6 @@
 	margin-bottom: 30px;
 }
 
-.about-image {
-	max-width: 100%;
-	height: auto;
-	border-radius: 10px;
-	margin-top: 20px;
-	box-shadow: var(--box-shadow-medium);
-}
-
-/* دکمه جذاب برای بازدید از محصولات */
-.aboutContent .shop-btn {
-	display: inline-block;
-	margin-top: 30px;
-	padding: 15px 30px;
-	background-color: var(--primary-color);
-	color: #fff;
-	border: none;
-	border-radius: 5px;
-	font-size: 1.2rem;
-	cursor: pointer;
-	transition: background-color var(--transition-speed) ease;
-	text-decoration: none;
-}
-
 .aboutContent .shop-btn:hover {
 	background-color: var(--button-hover-color); /* تغییر رنگ هنگام هاور */
 }
@@ -71,10 +47,6 @@
 	.aboutContent p {
 		font-size: 1rem;
 	}
-
-	.about-image {
-		margin-top: 15px;
-	}
 }
 
 /* ریسپانسیو برای دستگاه‌های خیلی کوچک (موبایل‌های بسیار کوچک) */
@@ -90,12 +62,5 @@
 	.shop-btn {
 		font-size: 1rem;
 		padding: 12px 25px;
-	}
-}
-
-@media (max-width: 900px) {
-	.aboutContent {
-		margin-top: 20vh;
-		padding: var(--padding-mobile);
 	}
 }

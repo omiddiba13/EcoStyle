@@ -1,0 +1,36 @@
+.loader {
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transform: translate(-50%, -50%);
+	font-size: 24px;
+	color: #000000;
+	z-index: 1000;
+	background-color: floralwhite;
+}
+
+.loader::after {
+	content: "";
+	border: 8px solid #f3f3f3; /* Light grey */
+	border-top: 8px solid #050505; /* Blue */
+	border-radius: 50%;
+	width: 60px;
+	height: 60px;
+	animation: spin 2s linear infinite;
+	display: inline-block;
+	margin-left: 10px; /* فاصله بین متن و انیمیشن */
+}
+
+@keyframes spin {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}

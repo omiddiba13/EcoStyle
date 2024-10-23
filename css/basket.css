@@ -6,14 +6,15 @@
 	border-radius: 20px;
 	background-color: #fff;
 	color: black;
-
 	overflow: auto; /* فعال کردن اسکرول داخلی */
 	scrollbar-width: none; /* برای فایرفاکس */
 	-ms-overflow-style: none;
 }
+
 .basket-popup ::-webkit-scrollbar {
 	display: none;
 }
+
 .basket-item {
 	display: flex;
 	flex-direction: column;
@@ -32,12 +33,14 @@
 .basket-item:hover {
 	transform: scale(1.02); /* کمی بزرگتر شدن هنگام هاور */
 }
+
 .basket-item span {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
 }
+
 .imgBasket {
 	width: 40px;
 	border-radius: 5px;
@@ -58,6 +61,7 @@
 	color: #555;
 	margin-left: 10px;
 }
+
 .btnBasket {
 	font-size: small;
 	margin-top: 2px;
