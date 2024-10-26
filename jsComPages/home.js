@@ -26,9 +26,6 @@ function home() {
 	// اجرای توابع مربوط به صفحه اصلی
 	swiper();
 	category();
-	womanCategory();
-	ProductCards();
-	showProductDetails(product);
 
 	// اعمال تغییر زبان بر اساس زبان ذخیره‌شده
 	const currentLang = localStorage.getItem("selectedLanguage") || "en";

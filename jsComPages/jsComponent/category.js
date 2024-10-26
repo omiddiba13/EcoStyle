@@ -1,46 +1,51 @@
 function category() {
 	let cards = document.getElementById("ProductCard");
 	cards.innerHTML = `
-       
         <div class="category no-select">
-            <a onclick="jewelery()">jewelery</a>
-            <a onclick="womanCategory()">woman</a>
-            <a onclick="mansCategory()">man</a>
+            <a onclick="fetchJewelery()">jewelery</a>
+            <a onclick="fetchWomenClothing()">woman</a>
+            <a onclick="fetchMenClothing()">man</a>
         </div>
-		<div class="half-border"></div>
+        <div class="half-border"></div>
     `;
 }
 
-function mansCategory() {
-	// واکشی داده‌های دسته‌بندی لباس مردانه
-	fetch("https://fakestoreapi.com/products/category/men's clothing")
-		.then((res) => res.json())
-		.then((json) => {
-			ProductCards(json);
-
-			// ارسال داده‌های API به تابع ProductCards
-		});
+// تابع برای نمایش محصولات
+function ProductCards(products) {
+	const cardsContainer = document.getElementById("ProductCard");
+	cardsContainer.innerHTML += products
+		.map(
+			(product) => `
+        <div class="product-card">
+            <h3>${product.title}</h3>
+            <p>قیمت: $${product.price}</p>
+            <img src="${product.image}" alt="${product.title}" width="100">
+        </div>
+    `,
+		)
+		.join("");
 }
 
-function womanCategory() {
-	fetch("https://fakestoreapi.com/products/category/women's clothing")
-		.then((res) => res.json())
-		.then((json) => {
-			ProductCards(json);
-		});
+// تابع برای دریافت داده‌های جواهرات
+async function fetchJewelery() {
+	const response = await fetch(apiLinks.jewelery);
+	const data = await response.json();
+	ProductCards(data);
 }
 
-function jewelery() {
-	fetch("https://fakestoreapi.com/products/category/jewelery")
-		.then((res) => res.json())
-		.then((json) => {
-			ProductCards(json);
-		});
+// تابع برای دریافت داده‌های لباس زنانه
+async function fetchWomenClothing() {
+	const response = await fetch(apiLinks.womenClothing);
+	const data = await response.json();
+	ProductCards(data);
 }
-womanCategory();
-document.querySelectorAll("a").forEach((link) => {
-	link.addEventListener("click", function (event) {
-		event.preventDefault(); // جلوگیری از عملکرد پیش‌فرض (مثل تغییر مسیر)
-		// اجرای عملکرد مورد نظر شما
-	});
-});
+
+// تابع برای دریافت داده‌های لباس مردانه
+async function fetchMenClothing() {
+	const response = await fetch(apiLinks.menClothing);
+	const data = await response.json();
+	ProductCards(data);
+}
+
+// بارگذاری دسته‌بندی لباس زنانه به‌صورت پیش‌فرض
+fetchWomenClothing();

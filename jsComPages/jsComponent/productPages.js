@@ -1,47 +1,52 @@
-// تابع برای نمایش جزئیات بیشتر محصول
-function showProductDetails(product) {
-	let productDetails = `
-        <div class="custom-product-details-overlay"></div> <!-- اضافه کردن یک لایه تیره پشت جزئیات -->
-        <div class="custom-product-details">
-            <img src="${product.image}" alt="${product.title}" />
-            <h2>${product.title}</h2>
-            <p class="custom-description">${product.description}</p>
-            <p class="custom-price">Price: $${product.price}</p>
-            <button class="add-to-cart">Add to Cart</button>
-            <button class="custom-close-details">Close</button>
-        </div>
-    `;
+async function showProductDetails(productId) {
+	// URL برای دریافت اطلاعات محصول
+	const productUrl = `https://fakestoreapi.com/products/${productId}`;
 
-	// افزودن جزئیات محصول به یک بخش مشخص
-	let detailsContainer = document.getElementById("productPage");
-	detailsContainer.innerHTML = productDetails;
-	detailsContainer.style.display = "block"; // نمایش بخش جزئیات
+	try {
+		const response = await fetch(productUrl);
+		const product = await response.json();
 
-	// جلوگیری از بسته شدن جزئیات هنگام کلیک داخل آن
-	let productDetailsDiv = document.querySelector(".custom-product-details");
-	productDetailsDiv.addEventListener("click", function (event) {
-		event.stopPropagation(); // جلوگیری از رسیدن کلیک به سند (document)
-	});
+		let productDetails = `
+			<div class="custom-product-details-overlay"></div>
+			<div class="custom-product-details">
+				<img src="${product.image}" alt="${product.title}" />
+				<h2>${product.title}</h2>
+				<p class="custom-description">${product.description}</p>
+				<p class="custom-price">Price: $${product.price}</p>
+				<button class="add-to-cart">Add to Cart</button>
+				<button class="custom-close-details">Close</button>
+			</div>
+		`;
 
-	// افزودن رویداد برای بستن جزئیات با کلیک روی دکمه بستن
-	let closeButton = document.querySelector(".custom-close-details");
-	closeButton.addEventListener("click", () => {
-		detailsContainer.style.display = "none"; // بستن بخش جزئیات
-	});
+		let detailsContainer = document.getElementById("productPage");
+		detailsContainer.innerHTML = productDetails;
+		detailsContainer.style.display = "block";
 
-	// افزودن رویداد برای بستن جزئیات با کلیک روی لایه تیره
-	let overlay = document.querySelector(".custom-product-details-overlay");
-	overlay.addEventListener("click", () => {
-		detailsContainer.style.display = "none"; // بستن بخش جزئیات
-	});
+		let productDetailsDiv = document.querySelector(".custom-product-details");
+		productDetailsDiv.addEventListener("click", function (event) {
+			event.stopPropagation(); // جلوگیری از رسیدن کلیک به سند
+		});
 
-	// رویداد برای اضافه کردن به سبد خرید از صفحه جزئیات محصول
-	let addToCartButton = document.querySelector(
-		".custom-product-details .add-to-cart",
-	);
-	addToCartButton.addEventListener("click", (event) => {
-		event.stopPropagation(); // جلوگیری از اجرای رویداد کلیک روی سایر عناصر
-		addToBasket(product); // محصول را به سبد خرید اضافه می‌کنیم
-		renderBasket(); // نمایش به‌روزرسانی‌شده سبد خرید
-	});
+		let closeButton = document.querySelector(".custom-close-details");
+		closeButton.addEventListener("click", () => {
+			detailsContainer.style.display = "none"; // بستن بخش جزئیات
+		});
+
+		let overlay = document.querySelector(".custom-product-details-overlay");
+		overlay.addEventListener("click", () => {
+			detailsContainer.style.display = "none"; // بستن بخش جزئیات
+		});
+
+		let addToCartButton = document.querySelector(
+			".custom-product-details .add-to-cart",
+		);
+		addToCartButton.addEventListener("click", (event) => {
+			event.stopPropagation();
+			addToBasket(product); // محصول را به سبد خرید اضافه می‌کنیم
+			renderBasket(); // نمایش به‌روزرسانی‌شده سبد خرید
+		});
+	} catch (error) {
+		console.error("Error fetching product details:", error);
+		alert("Failed to load product details. Please try again later.");
+	}
 }

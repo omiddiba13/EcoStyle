@@ -1,8 +1,8 @@
 function ProductCards(products) {
 	let cards = document.getElementById("ProductCard");
-	innerHTML = "";
-	category();
-	// فقط محتوای کارت‌ها را پاک می‌کنیم
+	cards.innerHTML = ""; // پاک کردن محتوای قبلی
+	category(); // فراخوانی تابع category
+
 	let productContainer = `<div class="product-container"></div>`;
 	cards.innerHTML += productContainer; // دکمه‌های کتگوری حفظ می‌شوند
 
@@ -27,7 +27,7 @@ function ProductCards(products) {
 	let productCards = document.querySelectorAll(".product-card");
 	productCards.forEach((card, index) => {
 		card.addEventListener("click", () => {
-			showProductDetails(products[index]); // نمایش اطلاعات بیشتر محصول
+			showProductDetails(products[index].id); // نمایش اطلاعات بیشتر محصول با استفاده از ID
 		});
 	});
 
@@ -39,6 +39,3 @@ function ProductCards(products) {
 		});
 	});
 }
-
-
-renderBasket();

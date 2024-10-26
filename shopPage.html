@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>EcoStyle</title>
+		<link rel="stylesheet" href="css/root.css" />
+		<link rel="stylesheet" href="css/home.css" />
+		<link rel="stylesheet" href="css/about.css" />
+		<link rel="stylesheet" href="css/swiper.css" />
+		<link rel="stylesheet" href="css/navebar.css" />
+		<link rel="stylesheet" href="css/contactUs.css" />
+		<link rel="stylesheet" href="css/ProductCards.css" />
+		<link rel="stylesheet" href="css/category.css" />
+		<link rel="stylesheet" href="css/basket.css" />
+		<link rel="stylesheet" href="css/footer.css" />
+		<link rel="stylesheet" href="css/productPage.css" />
+		<link rel="stylesheet" href="css/shopPage.css" />
+		<link rel="stylesheet" href="css/load.css" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+		<script
+			src="https://kit.fontawesome.com/a052ba504f.js"
+			crossorigin="anonymous"></script>
+	</head>
+	<body>
+		<header class="bgCover">
+			<div class="lag">
+				<div class="language-buttons">
+					<button onclick="changeLanguage('fa')">fa</button>
+					<button onclick="changeLanguage('en')">English</button>
+				</div>
+
+				<div class="search-cart">
+					<button class="search-button">
+						<i class="fas fa-search"></i>
+					</button>
+					<button id="basket-icon">
+						<i class="fa-solid fa-basket-shopping"></i>
+						<span id="basket-count">0</span>
+						<!-- تعداد محصولات در سبد -->
+					</button>
+				</div>
+
+				<!-- پاپ‌آپ سبد خرید -->
+				<div id="basket-popup" class="basket-popup" style="display: none">
+					<h3>Your Basket</h3>
+					<div id="basket-items"></div>
+					<p>Total: $<span id="total-price">0.00</span></p>
+					<button id="close-basket">Close</button>
+				</div>
+			</div>
+			<nav id="navbarMain"></nav>
+		</header>
+		<div id="shopPage"><div id="shoplists"></div></div>
+		<script>
+			async function fetchCategoryProducts(categoryUrl) {
+				try {
+					const response = await fetch(categoryUrl);
+					const products = await response.json();
+					return products;
+				} catch (error) {
+					console.error("Error fetching category products:", error);
+					return [];
+				}
+			}
+
+			async function fetchAllCategories() {
+				const categories = [
+					"https://fakestoreapi.com/products/category/men's clothing",
+					"https://fakestoreapi.com/products/category/women's clothing",
+					"https://fakestoreapi.com/products/category/jewelery",
+				];
+
+				const allProducts = [];
+				for (const categoryUrl of categories) {
+					const categoryProducts = await fetchCategoryProducts(categoryUrl);
+					allProducts.push(...categoryProducts);
+				}
+
+				return allProducts;
+			}
+
+			let shopPage = document.getElementById("shopPage");
+			let shoplist = document.getElementById("shoplists");
+
+			function shop(products) {
+				shopPage.style.display = "block"; // نمایش فروشگاه
+				let productCards = "";
+
+				products.forEach((product, index) => {
+					let productCard = `
+                    <div class="product-card" data-index="${index}">
+                        <img src="${product.image}" alt="${product.title}" />
+                        <h3>${product.title}</h3>
+                        <p class="price">$${product.price}</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                `;
+					productCards += productCard;
+				});
+
+				shoplist.innerHTML = productCards;
+			}
+
+			function sortDescending(products) {
+				const sortedProducts = [...products].sort((a, b) => b.price - a.price);
+				shop(sortedProducts);
+			}
+
+			function sortAscending(products) {
+				const sortedProducts = [...products].sort((a, b) => a.price - b.price);
+				shop(sortedProducts);
+			}
+
+			async function initializeApp() {
+				const products = await fetchAllCategories();
+
+				// بررسی وجود کنترل‌ها قبل از اضافه کردن
+				if (!document.getElementById("controls")) {
+					shopPage.insertAdjacentHTML(
+						"beforebegin",
+						`
+                    <div id="controls">
+                        <button id="sortDesc">Sort by Low Price</button>
+                        <button id="sortAsc">Sort by High Price</button>
+                    </div>
+                    `,
+					);
+
+					document.getElementById("sortDesc").onclick = () =>
+						sortDescending(products);
+					document.getElementById("sortAsc").onclick = () =>
+						sortAscending(products);
+				}
+
+				shop(products); // نمایش فروشگاه
+			}
+
+			document.addEventListener("DOMContentLoaded", initializeApp);
+		</script>
+		<!-- js -->
+		<script src="jsComPages/jsComponent/api.js"></script>
+		<script src="jsComPages/jsComponent/load.js"></script>
+		<script src="jsComPages/jsComponent/basket.js"></script>
+		<script src="jsComPages/jsComponent/lang.js"></script>
+		<script src="jsComPages/jsComponent/navBar.js"></script>
+		<script src="jsComPages/home.js"></script>
+		<script src="jsComPages/jsComponent/swiper.js"></script>
+		<script src="jsComPages/jsComponent/category.js"></script>
+		<script src="jsComPages/jsComponent/productCards.js"></script>
+		<script src="jsComPages/about.js"></script>
+		<script src="jsComPages/contactUs.js"></script>
+		<script src="jsComPages/shopPage.js"></script>
+		<script src="jsComPages/jsComponent/footer.js"></script>
+		<script src="jsComPages/jsComponent/productPages.js"></script>
+	</body>
+</html>
