@@ -89,10 +89,12 @@ function createLoginPage() {
 				);
 
 				if (user) {
+					loadShow();
 					message.textContent = "Login successful!";
 					message.style.color = "green";
 					// انتقال کاربر به بخش‌های دیگر
 					window.location.href = "/EcoStyle/dashboard.html"; // به صفحه بعدی منتقل می‌شود
+					loadHide();
 				} else {
 					message.textContent = "Invalid username or password.";
 					message.style.color = "red";

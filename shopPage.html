@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fa">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>EcoStyle</title>
+		<link rel="stylesheet" href="css/load.css" />
 		<link rel="stylesheet" href="css/root.css" />
+		<link rel="stylesheet" href="css/swiper.css" />
 		<link rel="stylesheet" href="css/home.css" />
 		<link rel="stylesheet" href="css/about.css" />
-		<link rel="stylesheet" href="css/swiper.css" />
 		<link rel="stylesheet" href="css/navebar.css" />
 		<link rel="stylesheet" href="css/contactUs.css" />
 		<link rel="stylesheet" href="css/ProductCards.css" />
@@ -16,7 +17,7 @@
 		<link rel="stylesheet" href="css/footer.css" />
 		<link rel="stylesheet" href="css/productPage.css" />
 		<link rel="stylesheet" href="css/shopPage.css" />
-		<link rel="stylesheet" href="css/load.css" />
+		<link rel="stylesheet" href="css/loginPage.css" />
 		<link
 			rel="stylesheet"
 			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
@@ -25,6 +26,7 @@
 			crossorigin="anonymous"></script>
 	</head>
 	<body>
+		<div id="loader" class="loader"></div>
 		<header class="bgCover">
 			<div class="lag">
 				<div class="language-buttons">
@@ -86,6 +88,7 @@
 			let shoplist = document.getElementById("shoplists");
 
 			function shop(products) {
+				loadShow();
 				shopPage.style.display = "block"; // نمایش فروشگاه
 				let productCards = "";
 
@@ -136,6 +139,7 @@
 				}
 
 				shop(products); // نمایش فروشگاه
+				loadHide();
 			}
 
 			document.addEventListener("DOMContentLoaded", initializeApp);
