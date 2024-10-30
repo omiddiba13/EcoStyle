@@ -32,6 +32,7 @@ async function fetchJewelery() {
 	const response = await fetch(apiLinks.jewelery);
 	const data = await response.json();
 	ProductCards(data);
+	loadHide();
 }
 
 // تابع برای دریافت داده‌های لباس زنانه
@@ -40,6 +41,7 @@ async function fetchWomenClothing() {
 	const response = await fetch(apiLinks.womenClothing);
 	const data = await response.json();
 	ProductCards(data);
+	loadHide();
 }
 
 // تابع برای دریافت داده‌های لباس مردانه
@@ -48,6 +50,7 @@ async function fetchMenClothing() {
 	const response = await fetch(apiLinks.menClothing);
 	const data = await response.json();
 	ProductCards(data);
+	loadHide();
 }
 
 // بارگذاری دسته‌بندی لباس زنانه به‌صورت پیش‌فرض
