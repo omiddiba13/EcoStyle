@@ -1,6 +1,4 @@
 function home() {
-	loadShow(); // نمایش لودر در ابتدا
-
 	// دریافت المان‌های DOM
 	const aboutSection = document.getElementById("aboutSction");
 	const contactPage = document.getElementById("contactPage");
@@ -28,7 +26,6 @@ function home() {
 	// اجرای توابع مربوط به صفحه اصلی
 	swiper();
 	category();
-	productCard();
 
 	// اعمال تغییر زبان بر اساس زبان ذخیره‌شده
 	const currentLang = localStorage.getItem("selectedLanguage") || "en";

@@ -49,8 +49,6 @@ async function fetchAllProducts() {
 			...menClothingData,
 		]);
 
-		loadHide(); // اینجا تابع loadHide() را فراخوانی می‌کنیم
-
 		return [...jeweleryData, ...womenClothingData, ...menClothingData];
 	} catch (error) {
 		console.error("Error fetching products:", error);

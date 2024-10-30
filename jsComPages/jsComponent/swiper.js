@@ -36,6 +36,5 @@ function swiper() {
 
 	// راه‌اندازی اولیه
 	updateSlidePosition();
-	loadHide();
 }
 swiper();
