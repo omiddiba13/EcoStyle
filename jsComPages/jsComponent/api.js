@@ -35,6 +35,7 @@ async function fetchMenClothing() {
 // تابع برای دریافت تمام محصولات
 async function fetchAllProducts() {
 	try {
+		loadShow();
 		const [jeweleryData, womenClothingData, menClothingData] =
 			await Promise.all([
 				fetchJewelery(),
@@ -48,9 +49,12 @@ async function fetchAllProducts() {
 			...menClothingData,
 		]);
 
+		loadHide(); // اینجا تابع loadHide() را فراخوانی می‌کنیم
+
 		return [...jeweleryData, ...womenClothingData, ...menClothingData];
 	} catch (error) {
 		console.error("Error fetching products:", error);
+		loadHide(); // مخفی کردن لودر در صورت بروز خطا نیز
 		return []; // برگرداندن آرایه خالی در صورت خطا
 	}
 }

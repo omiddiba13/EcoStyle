@@ -1,4 +1,6 @@
 function home() {
+	loadShow(); // نمایش لودر در ابتدا
+
 	// دریافت المان‌های DOM
 	const aboutSection = document.getElementById("aboutSction");
 	const contactPage = document.getElementById("contactPage");
@@ -30,6 +32,8 @@ function home() {
 	// اعمال تغییر زبان بر اساس زبان ذخیره‌شده
 	const currentLang = localStorage.getItem("selectedLanguage") || "en";
 	changeLanguage(currentLang);
+
+	// مخفی کردن لودر بعد از بارگذاری کامل
 }
 
 // استفاده از DOMContentLoaded برای اجرای تابع home

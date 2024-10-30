@@ -1,4 +1,6 @@
 function ProductCards(products) {
+	loadShow(); // نمایش لودر هنگام شروع بارگذاری محصولات
+
 	let cards = document.getElementById("ProductCard");
 	cards.innerHTML = ""; // پاک کردن محتوای قبلی
 	category(); // فراخوانی تابع category
@@ -38,4 +40,6 @@ function ProductCards(products) {
 			addToBasket(products[index]); // محصول را به سبد خرید اضافه می‌کنیم
 		});
 	});
+
+	loadHide(); // مخفی کردن لودر پس از اتمام بارگذاری محصولات
 }
