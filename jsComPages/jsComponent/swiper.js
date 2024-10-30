@@ -2,6 +2,7 @@ let slideInterval; // تعریف متغیر سراسری برای تایمر
 
 function swiper() {
 	const swiper = document.getElementById("swiperSection");
+	loadShow();
 	swiper.style.display = "block";
 	swiper.innerHTML = `
         <div class="swiper-container">
@@ -35,5 +36,6 @@ function swiper() {
 
 	// راه‌اندازی اولیه
 	updateSlidePosition();
+	loadHide();
 }
 swiper();
