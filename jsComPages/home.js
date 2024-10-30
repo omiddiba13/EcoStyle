@@ -28,12 +28,14 @@ function home() {
 	// اجرای توابع مربوط به صفحه اصلی
 	swiper();
 	category();
+	productCard();
 
 	// اعمال تغییر زبان بر اساس زبان ذخیره‌شده
 	const currentLang = localStorage.getItem("selectedLanguage") || "en";
 	changeLanguage(currentLang);
 
 	// مخفی کردن لودر بعد از بارگذاری کامل
+	loadHide();
 }
 
 // استفاده از DOMContentLoaded برای اجرای تابع home
