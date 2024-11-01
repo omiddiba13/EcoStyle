@@ -28,29 +28,23 @@ function ProductCards(products) {
 
 // تابع برای دریافت داده‌های جواهرات
 async function fetchJewelery() {
-	loadShow();
 	const response = await fetch(apiLinks.jewelery);
 	const data = await response.json();
 	ProductCards(data);
-	loadHide();
 }
 
 // تابع برای دریافت داده‌های لباس زنانه
 async function fetchWomenClothing() {
-	loadShow();
 	const response = await fetch(apiLinks.womenClothing);
 	const data = await response.json();
 	ProductCards(data);
-	loadHide();
 }
 
 // تابع برای دریافت داده‌های لباس مردانه
 async function fetchMenClothing() {
-	loadShow();
 	const response = await fetch(apiLinks.menClothing);
 	const data = await response.json();
 	ProductCards(data);
-	loadHide();
 }
 
 // بارگذاری دسته‌بندی لباس زنانه به‌صورت پیش‌فرض

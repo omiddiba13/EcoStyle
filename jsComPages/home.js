@@ -32,5 +32,4 @@ function home() {
 	changeLanguage(currentLang);
 
 	// مخفی کردن لودر بعد از بارگذاری کامل
-	loadHide();
 }
