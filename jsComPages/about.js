@@ -45,4 +45,5 @@ function About() {
 	// اعمال تغییر زبان براساس زبان ذخیره‌شده در localStorage
 	const currentLang = localStorage.getItem("selectedLanguage") || "en";
 	changeLanguage(currentLang);
+		loadHide();
 }

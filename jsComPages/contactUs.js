@@ -44,4 +44,5 @@ function contactUsPage() {
 	// اعمال تغییر زبان بر اساس زبان ذخیره‌شده
 	const currentLang = localStorage.getItem("selectedLanguage") || "en";
 	changeLanguage(currentLang);
+		loadHide();
 }
