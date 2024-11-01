@@ -6,10 +6,10 @@ navbar.innerHTML = `
             <h1 class="no-select" onclick="navigateTo('home')">EcoStyle</h1>
         </div>
         <ul class="SYnav">
-            <li><a id="home" href="#" onclick="navigateTo('home')">Home</a></li>
-            <li><a id="about" href="#" onclick="navigateTo('about')">About</a></li>
-            <li><a id="contact" href="#" onclick="navigateTo('contact')">Contact</a></li>
-            <li><a id="shop" href="#" onclick="navigateTo('shop')">Shop</a></li>
+            <li><a id="home" onclick="navigateTo('home')">Home</a></li>
+            <li><a id="about" onclick="navigateTo('about')">About</a></li>
+            <li><a id="contact"  onclick="navigateTo('contact')">Contact</a></li>
+            <li><a id="shop"  onclick="navigateTo('shop')">Shop</a></li>
         </ul>
     </nav>
 
