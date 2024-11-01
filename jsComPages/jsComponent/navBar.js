@@ -49,18 +49,17 @@ function navigateTo(section) {
 	switch (section) {
 		case "home":
 			home(); // اجرای تابع مربوط به خانه
-			// اینجا می‌توانید کد لازم برای ناوبری به صفحه اصلی را اضافه کنید
+			window.location.href = "/EcoStyle/index.html"; // بارگذاری مجدد صفحه خانه
 			break;
 		case "about":
 			About(); // اجرای تابع مربوط به درباره ما
-			// اینجا می‌توانید کد لازم برای ناوبری به صفحه درباره ما را اضافه کنید
+			window.location.href = "/EcoStyle/index.html"; // بارگذاری مجدد صفحه درباره ما
 			break;
 		case "contact":
 			contactUsPage(); // اجرای تابع مربوط به تماس با ما
-			// اینجا می‌توانید کد لازم برای ناوبری به صفحه تماس با ما را اضافه کنید
+			window.location.href = "/EcoStyle/index.html"; // بارگذاری مجدد صفحه تماس با ما
 			break;
 		case "shop":
-			// اگر نیاز به کد خاصی برای صفحه شاپ دارید، آن را اینجا قرار دهید
 			window.location.href = "/EcoStyle/shopPage.html"; // ناوبری به صفحه شاپ
 			break;
 	}
