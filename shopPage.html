@@ -26,18 +26,12 @@
 			crossorigin="anonymous"></script>
 	</head>
 	<body>
-		<div id="loader" class="loader"></div>
 		<!-- پنجره پاپ‌آپ فرم‌های ورود و ثبت‌نام -->
 		<div class="loginbg" id="loginBackground">
 			<div id="login"></div>
 		</div>
 		<div class="loginbg" id="signupBackground">
 			<div id="signup"></div>
-		</div>
-		<div class="logo-mobile">
-			<div>
-				<h1 class="no-select" onclick="home()">EcoStyle</h1>
-			</div>
 		</div>
 		<header class="bgCover">
 			<div class="lag">
@@ -53,7 +47,9 @@
 					<button id="basket-icon">
 						<i class="fa-solid fa-basket-shopping"></i>
 						<span id="basket-count">0</span>
-						<!-- تعداد محصولات در سبد -->
+					</button>
+					<button href="" id="profileButton">
+						<i class="fa-solid fa-user"></i>
 					</button>
 				</div>
 
@@ -100,7 +96,6 @@
 			let shoplist = document.getElementById("shoplists");
 
 			function shop(products) {
-				loadShow();
 				shopPage.style.display = "block"; // نمایش فروشگاه
 				let productCards = "";
 

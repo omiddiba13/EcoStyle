@@ -24,8 +24,8 @@ navbar.innerHTML = `
             <li><a onclick="changeLanguage('fa')">FA</a></li>
             <li><a onclick="changeLanguage('en')">EN</a></li>
             <li id="authButtons">
-                <button id="showLoginButton">LOGIN</button>
-                <button id="showSignupButton">SIGN UP</button>
+              <li>  <a id="showLoginButton" onclick="createLoginPage()">LOGIN</a></li>
+              <li> <a id="showSignupButton" onclick="createSignupPage()">SIGN UP</a></li>
             </li>
           
         </ul>
