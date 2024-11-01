@@ -27,6 +27,7 @@
 	margin: 0;
 	padding: 10px;
 	border-radius: 5px;
+	z-index: 5;
 }
 
 .mobile-nav .menu-icon {
@@ -92,18 +93,43 @@
 	.logo {
 		display: none;
 	}
+	/* استایل برای لوگوی موبایل */
+	.logo-mobile {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding: 10px 0;
+		color: #fff;
+		width: 100%;
+		position: absolute;
+		top: 0;
+		z-index: 3;
+	}
+
+	.logo-mobile h1 {
+		font-size: 24px;
+		color: #fff; /* رنگ متن لوگو */
+	}
+
 	.language-buttons {
 		display: none;
 	}
 	.mobile-nav {
 		display: block;
 		justify-content: end;
+		z-index: 10;
 	}
 	#navbarMain {
 		align-items: start;
 		justify-content: end;
 		margin-bottom: 20%;
 		margin-top: 0;
+		z-index: 10;
+	}
+}
+@media only screen and (min-width: 800px) {
+	.logo-mobile {
+		display: none;
 	}
 }
 

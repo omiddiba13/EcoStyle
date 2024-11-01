@@ -58,10 +58,13 @@ a {
 	height: auto;
 }
 .logo {
+	font-size: 20px;
+	margin: 0;
+	padding: 0;
+	color: #fff; /* رنگ متن لوگو */
 	position: relative;
 	display: flex;
 	justify-content: center;
-	color: #ffffff;
 	align-items: flex-start;
 }
 

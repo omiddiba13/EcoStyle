@@ -27,8 +27,17 @@
 	</head>
 	<body>
 		<div id="loader" class="loader"></div>
-		<div class="loginbg" id="loginBackground" style="display: none">
+		<!-- پنجره پاپ‌آپ فرم‌های ورود و ثبت‌نام -->
+		<div class="loginbg" id="loginBackground">
 			<div id="login"></div>
+		</div>
+		<div class="loginbg" id="signupBackground">
+			<div id="signup"></div>
+		</div>
+		<div class="logo-mobile">
+			<div>
+				<h1 class="no-select" onclick="home()">EcoStyle</h1>
+			</div>
 		</div>
 		<header class="bgCover">
 			<div class="lag">
@@ -36,6 +45,7 @@
 					<button onclick="changeLanguage('fa')">fa</button>
 					<button onclick="changeLanguage('en')">English</button>
 					<button href="" id="showLoginButton">LOGIN</button>
+					<button href="" id="showSignupButton">SIGN UP</button>
 				</div>
 
 				<div class="search-cart">
@@ -45,7 +55,6 @@
 					<button id="basket-icon">
 						<i class="fa-solid fa-basket-shopping"></i>
 						<span id="basket-count">0</span>
-						<!-- تعداد محصولات در سبد -->
 					</button>
 				</div>
 
@@ -57,6 +66,7 @@
 					<button id="close-basket">Close</button>
 				</div>
 			</div>
+
 			<nav id="navbarMain"></nav>
 		</header>
 
@@ -69,7 +79,8 @@
 			<div id="productPage"></div>
 		</section>
 		<footer id="footer"></footer>
-		<!-- js -->
+
+		<!-- جاوااسکریپت -->
 		<script src="jsComPages/jsComponent/load.js"></script>
 		<script src="jsComPages/jsComponent/api.js"></script>
 		<script src="jsComPages/jsComponent/basket.js"></script>

@@ -26,7 +26,7 @@ function home() {
 	// اجرای توابع مربوط به صفحه اصلی
 	swiper();
 	category();
-
+	fetchWomenClothing();
 	// اعمال تغییر زبان بر اساس زبان ذخیره‌شده
 	const currentLang = localStorage.getItem("selectedLanguage") || "en";
 	changeLanguage(currentLang);

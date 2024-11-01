@@ -1,117 +1,116 @@
 document
+	.getElementById("showSignupButton")
+	.addEventListener("click", createSignupPage);
+document
 	.getElementById("showLoginButton")
 	.addEventListener("click", createLoginPage);
+
+function createSignupPage() {
+	const signupPage = document.getElementById("signup");
+	const signupBackground = document.getElementById("signupBackground");
+
+	if (signupPage.childNodes.length > 0) {
+		signupBackground.style.display = "flex";
+		return;
+	}
+
+	signupBackground.style.display = "flex";
+
+	signupPage.innerHTML = `
+		<h2>Sign Up</h2>
+		<form id="signupForm">
+			<label for="signupUsername">Username:</label>
+			<input type="text" id="signupUsername" required />
+			<br />
+			<label for="signupPassword">Password:</label>
+			<input type="password" id="signupPassword" required />
+			<br />
+			<button type="submit">Sign Up</button>
+		</form>
+		<p id="signupMessage"></p>
+	`;
+
+	const signupForm = document.getElementById("signupForm");
+	const signupMessage = document.getElementById("signupMessage");
+
+	signupForm.addEventListener("submit", function (event) {
+		event.preventDefault();
+
+		const username = document.getElementById("signupUsername").value;
+		const password = document.getElementById("signupPassword").value;
+
+		// ذخیره اطلاعات در کوکی
+		document.cookie = `username=${username};path=/`;
+		document.cookie = `password=${password};path=/`;
+
+		signupMessage.textContent = "Sign up successful!";
+		signupMessage.style.color = "green";
+	});
+
+	signupBackground.addEventListener("click", function (event) {
+		if (event.target === signupBackground) {
+			signupPage.innerHTML = "";
+			signupBackground.style.display = "none";
+		}
+	});
+}
 
 function createLoginPage() {
 	const loginPage = document.getElementById("login");
 	const loginBackground = document.getElementById("loginBackground");
 
-	// اطمینان از اینکه صفحه لاگین فقط یک بار اضافه شود
 	if (loginPage.childNodes.length > 0) {
-		loginBackground.style.display = "flex"; // نمایش پس‌زمینه
-		return; // اگر قبلاً فرم وجود دارد، از ایجاد دوباره جلوگیری می‌کند
+		loginBackground.style.display = "flex";
+		return;
 	}
 
-	// نمایش پس‌زمینه
 	loginBackground.style.display = "flex";
 
-	// عنوان صفحه لاگین
-	const heading = document.createElement("h2");
-	heading.textContent = "Login";
-	loginPage.appendChild(heading);
+	loginPage.innerHTML = `
+		<h2>Login</h2>
+		<form id="loginForm">
+			<label for="username">Username:</label>
+			<input type="text" id="username" required />
+			<br />
+			<label for="password">Password:</label>
+			<input type="password" id="password" required />
+			<br />
+			<button type="submit">Login</button>
+		</form>
+		<p id="loginMessage"></p>
+	`;
 
-	// فرم لاگین
-	const form = document.createElement("form");
-	form.id = "loginForm";
+	const loginForm = document.getElementById("loginForm");
+	const loginMessage = document.getElementById("loginMessage");
 
-	// فیلد نام کاربری
-	const usernameLabel = document.createElement("label");
-	usernameLabel.setAttribute("for", "username");
-	usernameLabel.textContent = "Username:";
-	form.appendChild(usernameLabel);
+	loginForm.addEventListener("submit", function (event) {
+		event.preventDefault();
 
-	const usernameInput = document.createElement("input");
-	usernameInput.type = "text";
-	usernameInput.id = "username";
-	usernameInput.required = true;
-	form.appendChild(usernameInput);
-	form.appendChild(document.createElement("br"));
+		const username = document.getElementById("username").value;
+		const password = document.getElementById("password").value;
 
-	// فیلد رمز عبور
-	const passwordLabel = document.createElement("label");
-	passwordLabel.setAttribute("for", "password");
-	passwordLabel.textContent = "Password:";
-	form.appendChild(passwordLabel);
+		// دریافت اطلاعات ذخیره‌شده در کوکی
+		const cookies = document.cookie.split("; ").reduce((acc, cookie) => {
+			const [key, value] = cookie.split("=");
+			acc[key] = value;
+			return acc;
+		}, {});
 
-	const passwordInput = document.createElement("input");
-	passwordInput.type = "password";
-	passwordInput.id = "password";
-	passwordInput.required = true;
-	form.appendChild(passwordInput);
-	form.appendChild(document.createElement("br"));
-
-	// دکمه ورود
-	const loginButton = document.createElement("button");
-	loginButton.type = "submit";
-	loginButton.textContent = "Login";
-	form.appendChild(loginButton);
-
-	// اضافه کردن فرم به بدنه صفحه
-	loginPage.appendChild(form);
-
-	// پیام خطا یا موفقیت
-	const message = document.createElement("p");
-	message.id = "message";
-	loginPage.appendChild(message);
-
-	// رویداد ارسال فرم
-	form.addEventListener("submit", function (event) {
-		event.preventDefault(); // جلوگیری از ارسال فرم
-
-		// دریافت نام کاربری و رمز عبور
-		const username = usernameInput.value;
-		const password = passwordInput.value;
-
-		// خواندن فایل JSON با استفاده از fetch
-		fetch("users.json")
-			.then((response) => {
-				if (!response.ok) {
-					throw new Error("Failed to load JSON file");
-				}
-				return response.json();
-			})
-			.then((users) => {
-				console.log(users); // لاگ گرفتن از محتویات فایل JSON
-
-				// جستجو برای تطبیق نام کاربری و رمز عبور
-				const user = users.find(
-					(u) => u.username === username && u.password === password,
-				);
-
-				if (user) {
-					loadShow();
-					message.textContent = "Login successful!";
-					message.style.color = "green";
-					// انتقال کاربر به بخش‌های دیگر
-					window.location.href = "/EcoStyle/dashboard.html"; // به صفحه بعدی منتقل می‌شود
-					loadHide();
-				} else {
-					message.textContent = "Invalid username or password.";
-					message.style.color = "red";
-				}
-			})
-			.catch((error) => {
-				console.error("Error:", error);
-				message.textContent = "An error occurred. Please try again later.";
-				message.style.color = "red";
-			});
+		// مقایسه اطلاعات ورودی با کوکی
+		if (username === cookies.username && password === cookies.password) {
+			loginMessage.textContent = "Login successful!";
+			loginMessage.style.color = "green";
+			window.location.href = "/EcoStyle/dashboard.html";
+		} else {
+			loginMessage.textContent = "Invalid username or password.";
+			loginMessage.style.color = "red";
+		}
 	});
 
-	// بستن فرم با کلیک روی پس‌زمینه
 	loginBackground.addEventListener("click", function (event) {
 		if (event.target === loginBackground) {
-			loginPage.innerHTML = ""; // پاک کردن محتویات فرم
-			loginBackground.style.display = "none"; // مخفی کردن پس‌زمینه
+			loginPage.innerHTML = "";
+			loginBackground.style.display = "none";
 		}
 	});
 }

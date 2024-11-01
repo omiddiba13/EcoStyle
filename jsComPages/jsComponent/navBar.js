@@ -23,7 +23,8 @@ navbar.innerHTML = `
             <ul class="lan-MO">
                 <li><a onclick="changeLanguage('fa')">FA</a></li>
                 <li><a onclick="changeLanguage('en')">EN</a></li>
-                <li><button href="" id="showLoginButton" onclick="createLoginPage()">LOGIN</button></li>
+                  <li><a href="#" id="showLoginButton" onclick="createLoginPage()">LOGIN</a></li>
+        <li><a href="#" id="showSignupButton" onclick="createSignupPage()">SIGN UP</a></li>
             </ul>
         </ul>
     </nav>
