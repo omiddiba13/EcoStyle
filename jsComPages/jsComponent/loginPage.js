@@ -91,7 +91,6 @@ function createLoginPage() {
 	}, {});
 
 	if (username === cookies.username && password === cookies.password) {
-		loadShow(); // نمایش loader
 		loginMessage.textContent = "Login successful!";
 		loginMessage.style.color = "green";
 		setTimeout(() => {
