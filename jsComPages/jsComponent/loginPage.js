@@ -98,9 +98,11 @@ function createLoginPage() {
 
 		// مقایسه اطلاعات ورودی با کوکی
 		if (username === cookies.username && password === cookies.password) {
+			loadShow();
 			loginMessage.textContent = "Login successful!";
 			loginMessage.style.color = "green";
 			window.location.href = "/EcoStyle/dashboard.html";
+			loadHide();
 		} else {
 			loginMessage.textContent = "Invalid username or password.";
 			loginMessage.style.color = "red";
