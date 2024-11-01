@@ -83,31 +83,25 @@ function createLoginPage() {
 	const loginForm = document.getElementById("loginForm");
 	const loginMessage = document.getElementById("loginMessage");
 
-	loginForm.addEventListener("submit", function (event) {
-		event.preventDefault();
+	// دریافت اطلاعات ذخیره‌شده در کوکی
+	const cookies = document.cookie.split("; ").reduce((acc, cookie) => {
+		const [key, value] = cookie.split("=");
+		acc[key.trim()] = value ? value.trim() : value;
+		return acc;
+	}, {});
 
-		const username = document.getElementById("username").value;
-		const password = document.getElementById("password").value;
-
-		// دریافت اطلاعات ذخیره‌شده در کوکی
-		const cookies = document.cookie.split("; ").reduce((acc, cookie) => {
-			const [key, value] = cookie.split("=");
-			acc[key] = value;
-			return acc;
-		}, {});
-
-		// مقایسه اطلاعات ورودی با کوکی
-		if (username === cookies.username && password === cookies.password) {
-			loadShow();
-			loginMessage.textContent = "Login successful!";
-			loginMessage.style.color = "green";
+	if (username === cookies.username && password === cookies.password) {
+		loadShow(); // نمایش loader
+		loginMessage.textContent = "Login successful!";
+		loginMessage.style.color = "green";
+		setTimeout(() => {
 			window.location.href = "/EcoStyle/dashboard.html";
-			loadHide();
-		} else {
-			loginMessage.textContent = "Invalid username or password.";
-			loginMessage.style.color = "red";
-		}
-	});
+			loadHide(); // پنهان کردن loader پس از انتقال به صفحه جدید
+		}, 1000);
+	} else {
+		loginMessage.textContent = "Invalid username or password.";
+		loginMessage.style.color = "red";
+	}
 
 	loginBackground.addEventListener("click", function (event) {
 		if (event.target === loginBackground) {
