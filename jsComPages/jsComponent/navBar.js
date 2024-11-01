@@ -16,9 +16,9 @@ navbar.innerHTML = `
     <nav id="mobile-nav" class="mobile-nav">
     <button class="menu-icon" onclick="toggleMenu()">&#9776;</button>
     <ul id="mobile-menu" class="hidden">
-        <li><a id="home-mobile" href="/EcoStyle/index.html">Home</a></li>
-        <li><a id="about-mobile" href="/EcoStyle/index.html">About</a></li>
-        <li><a id="contact-mobile" href="/EcoStyle/index.html">Contact</a></li>
+        <li><a id="home-mobile" href="/EcoStyle/index.html"  onclick="home()">Home</a></li>
+        <li><a id="about-mobile" href="/EcoStyle/index.html"  onclick="About()">About</a></li>
+        <li><a id="contact-mobile" href="/EcoStyle/index.html"onclick="contactUsPage()">Contact</a></li>
         <li><a id="shop-mobile" href="/EcoStyle/shopPage.html">Shop</a></li>
         <ul class="lan-MO">
             <li><a onclick="changeLanguage('fa')">FA</a></li>
