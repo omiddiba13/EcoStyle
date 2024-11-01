@@ -1,4 +1,5 @@
-function contactUsPage() {
+function contactUsPage(event) {
+	event.preventDefault();
 	// دریافت المان‌های DOM
 	const contactPage = document.getElementById("contactPage");
 	const about = document.getElementById("aboutSction");

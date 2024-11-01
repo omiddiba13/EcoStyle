@@ -1,4 +1,5 @@
-function home() {
+function home(event) {
+	event.preventDefault();
 	// دریافت المان‌های DOM
 	const aboutSection = document.getElementById("aboutSction");
 	const contactPage = document.getElementById("contactPage");

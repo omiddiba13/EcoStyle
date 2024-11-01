@@ -1,4 +1,5 @@
-function About() {
+function About(event) {
+	event.preventDefault();
 	// پاک کردن محتوای فعلی
 	const about = document.getElementById("aboutSction");
 	const swiper = document.getElementById("swiperSection");
