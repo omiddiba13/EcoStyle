@@ -13,21 +13,24 @@ navbar.innerHTML = `
         </ul>
     </nav>
 
-    <nav id="mobile-nav" class="mobile-nav" onclick="toggleMenu()">
-        <button class="menu-icon">&#9776;</button>
-        <ul id="mobile-menu" class="hidden">
-            <li><a id="home-mobile" onclick="home()" href="/EcoStyle/index.html">Home</a></li>
-            <li><a id="about-mobile" onclick="About()" href="/EcoStyle/index.html">About</a></li>
-            <li><a id="contact-mobile" onclick="contactUsPage()" href="/EcoStyle/index.html">Contact</a></li>
-            <li><a id="shop-mobile" onclick="startShop()"  href="/EcoStyle/shopPage.html">Shop</a></li>
-            <ul class="lan-MO">
-                <li><a onclick="changeLanguage('fa')">FA</a></li>
-                <li><a onclick="changeLanguage('en')">EN</a></li>
-                  <li><a href="#" id="showLoginButton" onclick="createLoginPage()">LOGIN</a></li>
-        <li><a href="#" id="showSignupButton" onclick="createSignupPage()">SIGN UP</a></li>
-            </ul>
+    <nav id="mobile-nav" class="mobile-nav">
+    <button class="menu-icon" onclick="toggleMenu()">&#9776;</button>
+    <ul id="mobile-menu" class="hidden">
+        <li><a id="home-mobile" href="/EcoStyle/index.html">Home</a></li>
+        <li><a id="about-mobile" href="/EcoStyle/index.html">About</a></li>
+        <li><a id="contact-mobile" href="/EcoStyle/index.html">Contact</a></li>
+        <li><a id="shop-mobile" href="/EcoStyle/shopPage.html">Shop</a></li>
+        <ul class="lan-MO">
+            <li><a onclick="changeLanguage('fa')">FA</a></li>
+            <li><a onclick="changeLanguage('en')">EN</a></li>
+            <li id="authButtons">
+                <button id="showLoginButton">LOGIN</button>
+                <button id="showSignupButton">SIGN UP</button>
+            </li>
+          
         </ul>
-    </nav>
+    </ul>
+</nav>
 `;
 
 // بعد از اینکه HTML اضافه شد، باید دوباره تابع changeLanguage را فراخوانی کنید
