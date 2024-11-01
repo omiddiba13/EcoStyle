@@ -1,6 +1,7 @@
 function About() {
+	loadShow();
 	// پاک کردن محتوای فعلی
-	const about = document.getElementById("aboutSction");
+	const about = document.getElementById("aboutSection");
 	const swiper = document.getElementById("swiperSection");
 	const productCard = document.getElementById("ProductCard");
 	const contactPage = document.getElementById("contactPage");
@@ -45,5 +46,5 @@ function About() {
 	// اعمال تغییر زبان براساس زبان ذخیره‌شده در localStorage
 	const currentLang = localStorage.getItem("selectedLanguage") || "en";
 	changeLanguage(currentLang);
-		loadHide();
+	loadHide();
 }

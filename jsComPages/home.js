@@ -1,6 +1,7 @@
 function home() {
+	loadShow();
 	// دریافت المان‌های DOM
-	const aboutSection = document.getElementById("aboutSction");
+	const aboutSection = document.getElementById("aboutSection"); // اصلاح نام id
 	const contactPage = document.getElementById("contactPage");
 	const shopPage = document.getElementById("shopPage");
 	const controls = document.getElementById("controls");
@@ -27,11 +28,10 @@ function home() {
 	swiper();
 	category();
 	fetchWomenClothing();
+
 	// اعمال تغییر زبان بر اساس زبان ذخیره‌شده
 	const currentLang = localStorage.getItem("selectedLanguage") || "en";
 	changeLanguage(currentLang);
-
-	// مخفی کردن لودر بعد از بارگذاری کامل
 }
 
 // استفاده از DOMContentLoaded برای اجرای تابع home

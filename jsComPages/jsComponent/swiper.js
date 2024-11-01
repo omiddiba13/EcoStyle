@@ -2,7 +2,6 @@ let slideInterval; // تعریف متغیر سراسری برای تایمر
 
 function swiper() {
 	const swiper = document.getElementById("swiperSection");
-
 	swiper.style.display = "block";
 	swiper.innerHTML = `
         <div class="swiper-container">
@@ -21,7 +20,7 @@ function swiper() {
 	const totalSlides = slides.length;
 	const slideIntervalDuration = 3000; // مدت زمان بین اسلایدها (بر حسب میلی‌ثانیه)
 
-	function updateSlidePosition() {
+	function updateSlidePosition() { 
 		const offset = -currentIndex * 100;
 		swiperWrapper.style.transform = `translateX(${offset}%)`;
 	}

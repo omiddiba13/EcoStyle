@@ -26,20 +26,26 @@
 			crossorigin="anonymous"></script>
 	</head>
 	<body>
-		<!-- پنجره پاپ‌آپ فرم‌های ورود و ثبت‌نام -->
+		<div id="loader" class="loader" style="display: none"></div>
+		<!-- .... -->
 		<div class="loginbg" id="loginBackground">
 			<div id="login"></div>
 		</div>
 		<div class="loginbg" id="signupBackground">
 			<div id="signup"></div>
 		</div>
+		<div class="logo-mobile">
+			<div>
+				<h1 class="no-select" onclick="home()">EcoStyle</h1>
+			</div>
+		</div>
 		<header class="bgCover">
 			<div class="lag">
 				<div class="language-buttons">
 					<button onclick="changeLanguage('fa')">fa</button>
 					<button onclick="changeLanguage('en')">English</button>
+					<button id="showLoginButton">LOGIN</button>
 				</div>
-
 				<div class="search-cart">
 					<button class="search-button">
 						<i class="fas fa-search"></i>
@@ -48,7 +54,7 @@
 						<i class="fa-solid fa-basket-shopping"></i>
 						<span id="basket-count">0</span>
 					</button>
-					<button href="" id="profileButton">
+					<button id="profileButton">
 						<i class="fa-solid fa-user"></i>
 					</button>
 				</div>
@@ -63,7 +69,13 @@
 			</div>
 			<nav id="navbarMain"></nav>
 		</header>
-		<div id="shopPage"><div id="shoplists"></div></div>
+
+		<!-- shop -->
+		<div id="shopPage">
+			<div id="shoplists"></div>
+		</div>
+		<!-- shop -->
+
 		<script>
 			async function fetchCategoryProducts(categoryUrl) {
 				try {
@@ -101,12 +113,12 @@
 
 				products.forEach((product, index) => {
 					let productCard = `
-                    <div class="product-card" data-index="${index}">
-                        <img src="${product.image}" alt="${product.title}" />
-                        <h3>${product.title}</h3>
-                        <p class="price">$${product.price}</p>
-                        <button class="add-to-cart">Add to Cart</button>
-                    </div>
+                <div class="product-card" data-index="${index}">
+                    <img src="${product.image}" alt="${product.title}" />
+                    <h3>${product.title}</h3>
+                    <p class="price">$${product.price}</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
                 `;
 					productCards += productCard;
 				});

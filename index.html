@@ -1,102 +1,104 @@
 <!DOCTYPE html>
 <html lang="fa">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>EcoStyle</title>
-		<link rel="stylesheet" href="css/load.css" />
-		<link rel="stylesheet" href="css/root.css" />
-		<link rel="stylesheet" href="css/swiper.css" />
-		<link rel="stylesheet" href="css/home.css" />
-		<link rel="stylesheet" href="css/about.css" />
-		<link rel="stylesheet" href="css/navebar.css" />
-		<link rel="stylesheet" href="css/contactUs.css" />
-		<link rel="stylesheet" href="css/ProductCards.css" />
-		<link rel="stylesheet" href="css/category.css" />
-		<link rel="stylesheet" href="css/basket.css" />
-		<link rel="stylesheet" href="css/footer.css" />
-		<link rel="stylesheet" href="css/productPage.css" />
-		<link rel="stylesheet" href="css/shopPage.css" />
-		<link rel="stylesheet" href="css/loginPage.css" />
-		<link
-			rel="stylesheet"
-			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
-		<script
-			src="https://kit.fontawesome.com/a052ba504f.js"
-			crossorigin="anonymous"></script>
-	</head>
-	<body>
-		<!-- <div id="loader" class="loader" style="display: none;"></div> -->
-		<!-- پنجره پاپ‌آپ فرم‌های ورود و ثبت‌نام -->
-		<div class="loginbg" id="loginBackground">
-			<div id="login"></div>
-		</div>
-		<div class="loginbg" id="signupBackground">
-			<div id="signup"></div>
-		</div>
-		<div class="logo-mobile">
-			<div>
-				<h1 class="no-select" onclick="home()">EcoStyle</h1>
-			</div>
-		</div>
-		<header class="bgCover">
-			<div class="lag">
-				<div class="language-buttons">
-					<button onclick="changeLanguage('fa')">fa</button>
-					<button onclick="changeLanguage('en')">English</button>
-					<button href="" id="showLoginButton">LOGIN</button>
-					<button href="" id="showSignupButton">SIGN UP</button>
-				</div>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EcoStyle</title>
+    <link rel="stylesheet" href="css/load.css" />
+    <link rel="stylesheet" href="css/root.css" />
+    <link rel="stylesheet" href="css/swiper.css" />
+    <link rel="stylesheet" href="css/home.css" />
+    <link rel="stylesheet" href="css/about.css" />
+    <link rel="stylesheet" href="css/navebar.css" />
+    <link rel="stylesheet" href="css/contactUs.css" />
+    <link rel="stylesheet" href="css/ProductCards.css" />
+    <link rel="stylesheet" href="css/category.css" />
+    <link rel="stylesheet" href="css/basket.css" />
+    <link rel="stylesheet" href="css/footer.css" />
+    <link rel="stylesheet" href="css/productPage.css" />
+    <link rel="stylesheet" href="css/shopPage.css" />
+    <link rel="stylesheet" href="css/loginPage.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <script src="https://kit.fontawesome.com/a052ba504f.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="loader" class="loader" style="display: none"></div>
 
-				<div class="search-cart">
-					<button class="search-button">
-						<i class="fas fa-search"></i>
-					</button>
-					<button id="basket-icon">
-						<i class="fa-solid fa-basket-shopping"></i>
-						<span id="basket-count">0</span>
-					</button>
-					<button href="" id="profileButton">
-						<i class="fa-solid fa-user"></i>
-					</button>
-				</div>
+    <!-- پنجره پاپ‌آپ فرم‌های ورود و ثبت‌نام -->
+    <div class="loginbg" id="loginBackground">
+        <div id="login"></div>
+    </div>
+    <div class="loginbg" id="signupBackground">
+        <div id="signup"></div>
+    </div>
 
-				<!-- پاپ‌آپ سبد خرید -->
-				<div id="basket-popup" class="basket-popup" style="display: none">
-					<h3>Your Basket</h3>
-					<div id="basket-items"></div>
-					<p>Total: $<span id="total-price">0.00</span></p>
-					<button id="close-basket">Close</button>
-				</div>
-			</div>
+    <div class="logo-mobile">
+        <div>
+            <h1 class="no-select" onclick="home()">EcoStyle</h1>
+        </div>
+    </div>
 
-			<nav id="navbarMain"></nav>
-		</header>
+    <header class="bgCover">
+        <div class="lag">
+            <div class="language-buttons">
+                <button onclick="changeLanguage('fa')">fa</button>
+                <button onclick="changeLanguage('en')">English</button>
+                <button id="showLoginButton">LOGIN</button>
+                <button id="showSignupButton">SIGN UP</button>
+            </div>
 
-		<section>
-			<div id="swiperSection"></div>
-			<div id="contactPage"></div>
-			<div id="aboutSction"></div>
-			<div id="category"><div id="ProductCard"></div></div>
-			<div id="productPage"></div>
-		</section>
-		<footer id="footer"></footer>
+            <div class="search-cart">
+                <button class="search-button">
+                    <i class="fas fa-search"></i>
+                </button>
+                <button id="basket-icon">
+                    <i class="fa-solid fa-basket-shopping"></i>
+                    <span id="basket-count">0</span>
+                </button>
+                <button id="profileButton">
+                    <i class="fa-solid fa-user"></i>
+                </button>
+            </div>
 
-		<!-- جاوااسکریپت -->
-		<script src="jsComPages/jsComponent/load.js"></script>
-		<script src="jsComPages/jsComponent/api.js"></script>
-		<script src="jsComPages/jsComponent/basket.js"></script>
-		<script src="jsComPages/jsComponent/lang.js"></script>
-		<script src="jsComPages/jsComponent/navBar.js"></script>
-		<script src="jsComPages/home.js"></script>
-		<script src="jsComPages/about.js"></script>
-		<script src="jsComPages/contactUs.js"></script>
-		<script src="jsComPages/shopPage.js"></script>
-		<script src="jsComPages/jsComponent/loginPage.js"></script>
-		<script src="jsComPages/jsComponent/footer.js"></script>
-		<script src="jsComPages/jsComponent/swiper.js"></script>
-		<script src="jsComPages/jsComponent/category.js"></script>
-		<script src="jsComPages/jsComponent/productCards.js"></script>
-		<script src="jsComPages/jsComponent/productPages.js"></script>
-	</body>
+            <!-- پاپ‌آپ سبد خرید -->
+            <div id="basket-popup" class="basket-popup" style="display: none">
+                <h3>Your Basket</h3>
+                <div id="basket-items"></div>
+                <p>Total: $<span id="total-price">0.00</span></p>
+                <button id="close-basket">Close</button>
+            </div>
+        </div>
+
+        <nav id="navbarMain"></nav>
+    </header>
+
+    <section>
+        <div id="swiperSection"></div>
+        <div id="contactPage"></div>
+        <div id="aboutSection"></div>
+        <div id="category">
+            <div id="ProductCard"></div>
+        </div>
+        <div id="productPage"></div>
+    </section>
+
+    <footer id="footer"></footer>
+
+    <!-- جاوااسکریپت -->
+    <script src="jsComPages/jsComponent/load.js"></script>
+    <script src="jsComPages/jsComponent/api.js"></script>
+    <script src="jsComPages/jsComponent/basket.js"></script>
+    <script src="jsComPages/jsComponent/lang.js"></script>
+    <script src="jsComPages/jsComponent/navBar.js"></script>
+    <script src="jsComPages/home.js"></script>
+    <script src="jsComPages/about.js"></script>
+    <script src="jsComPages/contactUs.js"></script>
+    <script src="jsComPages/shopPage.js"></script>
+    <script src="jsComPages/jsComponent/loginPage.js"></script>
+    <script src="jsComPages/jsComponent/footer.js"></script>
+    <script src="jsComPages/jsComponent/swiper.js"></script>
+    <script src="jsComPages/jsComponent/category.js"></script>
+    <script src="jsComPages/jsComponent/productCards.js"></script>
+    <script src="jsComPages/jsComponent/productPages.js"></script>
+</body>
 </html>

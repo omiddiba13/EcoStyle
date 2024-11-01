@@ -24,28 +24,27 @@
 		<script
 			src="https://kit.fontawesome.com/a052ba504f.js"
 			crossorigin="anonymous"></script>
+		<style>
+			.dashboard-container {
+				max-width: 500px;
+				margin: 10px auto;
+				padding: 20px;
+				border: 1px solid #ccc;
+				border-radius: 10px;
+				background-color: #f9f9f9;
+			}
+			h1 {
+				text-align: center;
+			}
+			.user-info p {
+				font-size: 1.1em;
+				margin: 10px 0;
+			}
+		</style>
 	</head>
-	<style>
-		.dashboard-container {
-			max-width: 500px;
-			margin: 10px auto 10px auto;
-
-			padding: 20px;
-			border: 1px solid #ccc;
-			border-radius: 10px;
-			background-color: #f9f9f9;
-		}
-
-		h1 {
-			text-align: center;
-		}
-
-		.user-info p {
-			font-size: 1.1em;
-			margin: 10px 0;
-		}
-	</style>
 	<body>
+		<div id="loader" class="loader" style="display: none"></div>
+
 		<!-- پنجره پاپ‌آپ فرم‌های ورود و ثبت‌نام -->
 		<div class="loginbg" id="loginBackground">
 			<div id="login"></div>
@@ -53,17 +52,19 @@
 		<div class="loginbg" id="signupBackground">
 			<div id="signup"></div>
 		</div>
+
 		<div class="logo-mobile">
 			<div>
 				<h1 class="no-select" onclick="home()">EcoStyle</h1>
 			</div>
 		</div>
+
 		<header class="bgCover">
 			<div class="lag">
 				<div class="language-buttons">
 					<button onclick="changeLanguage('fa')">fa</button>
 					<button onclick="changeLanguage('en')">English</button>
-					<button href="" id="showLoginButton">LOGIN</button>
+					<button id="showLoginButton">LOGIN</button>
 				</div>
 				<div class="search-cart">
 					<button class="search-button">
@@ -73,11 +74,10 @@
 						<i class="fa-solid fa-basket-shopping"></i>
 						<span id="basket-count">0</span>
 					</button>
-					<button href="" id="profileButton">
+					<button id="profileButton">
 						<i class="fa-solid fa-user"></i>
 					</button>
 				</div>
-
 				<!-- پاپ‌آپ سبد خرید -->
 				<div id="basket-popup" class="basket-popup" style="display: none">
 					<h3>Your Basket</h3>
@@ -100,11 +100,10 @@
 				</div>
 				<button id="logoutButton">خروج</button>
 			</div>
-			<script src="jsComPages/jsComponent/dashboard.js"></script>
-			<div id="contactPage"></div>
-			<div id="aboutSction"></div>
 		</section>
+
 		<footer id="footer"></footer>
+
 		<!-- js -->
 		<script src="jsComPages/jsComponent/api.js"></script>
 		<script src="jsComPages/jsComponent/load.js"></script>
@@ -121,6 +120,7 @@
 		<script src="jsComPages/jsComponent/category.js"></script>
 		<script src="jsComPages/jsComponent/productCards.js"></script>
 		<script src="jsComPages/jsComponent/productPages.js"></script>
+
 		<script>
 			document.addEventListener("DOMContentLoaded", () => {
 				const cookies = document.cookie.split("; ").reduce((acc, cookie) => {
