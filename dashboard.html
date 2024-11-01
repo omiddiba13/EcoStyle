@@ -25,8 +25,27 @@
 			src="https://kit.fontawesome.com/a052ba504f.js"
 			crossorigin="anonymous"></script>
 	</head>
+	<style>
+		.dashboard-container {
+			max-width: 500px;
+			margin: 10px auto 10px auto;
+
+			padding: 20px;
+			border: 1px solid #ccc;
+			border-radius: 10px;
+			background-color: #f9f9f9;
+		}
+
+		h1 {
+			text-align: center;
+		}
+
+		.user-info p {
+			font-size: 1.1em;
+			margin: 10px 0;
+		}
+	</style>
 	<body>
-		<div id="loader" class="loader"></div>
 		<!-- پنجره پاپ‌آپ فرم‌های ورود و ثبت‌نام -->
 		<div class="loginbg" id="loginBackground">
 			<div id="login"></div>
@@ -70,6 +89,17 @@
 		</header>
 
 		<section>
+			<div class="dashboard-container">
+				<h1>داشبورد کاربر</h1>
+				<div class="user-info">
+					<p><strong>نام کاربری:</strong> <span id="username"></span></p>
+					<p><strong>نام:</strong> <span id="firstName"></span></p>
+					<p><strong>نام خانوادگی:</strong> <span id="lastName"></span></p>
+					<p><strong>سن:</strong> <span id="age"></span></p>
+				</div>
+				<button id="logoutButton">خروج</button>
+			</div>
+			<script src="jsComPages/jsComponent/dashboard.js"></script>
 			<div id="contactPage"></div>
 			<div id="aboutSction"></div>
 		</section>
@@ -91,7 +121,31 @@
 		<script src="jsComPages/jsComponent/productCards.js"></script>
 		<script src="jsComPages/jsComponent/productPages.js"></script>
 		<script>
-			loadHide();
+			document.addEventListener("DOMContentLoaded", () => {
+				const cookies = document.cookie.split("; ").reduce((acc, cookie) => {
+					const [key, value] = cookie.split("=");
+					acc[key] = value;
+					return acc;
+				}, {});
+
+				document.getElementById("username").textContent =
+					cookies.username || "نامشخص";
+				document.getElementById("firstName").textContent =
+					cookies.firstName || "نامشخص";
+				document.getElementById("lastName").textContent =
+					cookies.lastName || "نامشخص";
+				document.getElementById("age").textContent = cookies.age || "نامشخص";
+
+				document
+					.getElementById("logoutButton")
+					.addEventListener("click", () => {
+						document.cookie = "username=; max-age=0; path=/";
+						document.cookie = "firstName=; max-age=0; path=/";
+						document.cookie = "lastName=; max-age=0; path=/";
+						document.cookie = "age=; max-age=0; path=/";
+						window.location.href = "/EcoStyle/index.html";
+					});
+			});
 		</script>
 	</body>
 </html>

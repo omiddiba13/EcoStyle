@@ -45,6 +45,11 @@ function createSignupPage() {
 
 		signupMessage.textContent = "Sign up successful!";
 		signupMessage.style.color = "green";
+
+		// هدایت به صفحه مورد نظر و نگه داشتن حالت لاگین
+		setTimeout(() => {
+			window.location.href = "/EcoStyle/dashboard.html";
+		}, 1000);
 	});
 
 	signupBackground.addEventListener("click", function (event) {
@@ -83,24 +88,31 @@ function createLoginPage() {
 	const loginForm = document.getElementById("loginForm");
 	const loginMessage = document.getElementById("loginMessage");
 
-	// دریافت اطلاعات ذخیره‌شده در کوکی
-	const cookies = document.cookie.split("; ").reduce((acc, cookie) => {
-		const [key, value] = cookie.split("=");
-		acc[key.trim()] = value ? value.trim() : value;
-		return acc;
-	}, {});
+	loginForm.addEventListener("submit", function (event) {
+		event.preventDefault();
 
-	if (username === cookies.username && password === cookies.password) {
-		loginMessage.textContent = "Login successful!";
-		loginMessage.style.color = "green";
-		setTimeout(() => {
-			window.location.href = "/EcoStyle/dashboard.html";
-			loadHide(); // پنهان کردن loader پس از انتقال به صفحه جدید
-		}, 1000);
-	} else {
-		loginMessage.textContent = "Invalid username or password.";
-		loginMessage.style.color = "red";
-	}
+		const username = document.getElementById("username").value;
+		const password = document.getElementById("password").value;
+
+		// دریافت اطلاعات ذخیره‌شده در کوکی
+		const cookies = document.cookie.split("; ").reduce((acc, cookie) => {
+			const [key, value] = cookie.split("=");
+			acc[key.trim()] = value ? value.trim() : value;
+			return acc;
+		}, {});
+
+		// مقایسه اطلاعات ورودی با کوکی
+		if (username === cookies.username && password === cookies.password) {
+			loginMessage.textContent = "Login successful!";
+			loginMessage.style.color = "green";
+			setTimeout(() => {
+				window.location.href = "/EcoStyle/dashboard.html";
+			}, 1000);
+		} else {
+			loginMessage.textContent = "Invalid username or password.";
+			loginMessage.style.color = "red";
+		}
+	});
 
 	loginBackground.addEventListener("click", function (event) {
 		if (event.target === loginBackground) {
