@@ -3,7 +3,7 @@ let navbar = document.getElementById("navbarMain");
 navbar.innerHTML = `
     <nav id="navbar">
         <div class="logo">
-            <h1 class="no-select" onclick="home()">EcoStyle</h1>
+            <h1 class="no-select" onclick="home()"  href="/EcoStyle/index.html">EcoStyle</h1>
         </div>
         <ul class="SYnav">
             <li><a id="home" onclick="home()" href="/EcoStyle/index.html">Home</a></li>
