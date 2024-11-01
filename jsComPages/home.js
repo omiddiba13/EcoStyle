@@ -34,8 +34,3 @@ function home() {
 	// مخفی کردن لودر بعد از بارگذاری کامل
 	loadHide();
 }
-
-// استفاده از DOMContentLoaded برای اجرای تابع home
-document.addEventListener("DOMContentLoaded", function () {
-	home();
-});
