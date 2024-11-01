@@ -16,10 +16,10 @@ navbar.innerHTML = `
     <nav id="mobile-nav" class="mobile-nav">
         <button class="menu-icon" onclick="toggleMenu()">&#9776;</button>
         <ul id="mobile-menu" class="hidden">
-            <li><a id="home-mobile" href="#" onclick="navigateTo('home')">Home</a></li>
-            <li><a id="about-mobile" href="#" onclick="navigateTo('about')">About</a></li>
-            <li><a id="contact-mobile" href="#" onclick="navigateTo('contact')">Contact</a></li>
-            <li><a id="shop-mobile" href="#" onclick="navigateTo('shop')">Shop</a></li>
+            <li><a id="home-mobile"  onclick="navigateTo('home')">Home</a></li>
+            <li><a id="about-mobile"  onclick="navigateTo('about')">About</a></li>
+            <li><a id="contact-mobile"  onclick="navigateTo('contact')">Contact</a></li>
+            <li><a id="shop-mobile" onclick="navigateTo('shop')">Shop</a></li>
             <ul class="lan-MO">
                 <li><a onclick="changeLanguage('fa')">FA</a></li>
                 <li><a onclick="changeLanguage('en')">EN</a></li>
@@ -34,19 +34,19 @@ navbar.innerHTML = `
 
 // تابع برای مدیریت ناوبری
 function navigateTo(section) {
-	// اجرای تابع مربوطه
+	// اجرای تابع مربوطه و تغییر آدرس بدون بارگذاری مجدد صفحه
 	switch (section) {
 		case "home":
 			home();
-			window.location.href = "/EcoStyle/index.html"; // بارگذاری صفحه خانه
+			history.pushState(null, "", "/EcoStyle/index.html"); // تغییر URL بدون بارگذاری مجدد
 			break;
 		case "about":
 			About();
-			window.location.href = "/EcoStyle/index.html"; // بارگذاری صفحه درباره ما
+			history.pushState(null, "", "/EcoStyle/index.html"); // تغییر URL بدون بارگذاری مجدد
 			break;
 		case "contact":
 			contactUsPage();
-			window.location.href = "/EcoStyle/index.html"; // بارگذاری صفحه تماس با ما
+			history.pushState(null, "", "/EcoStyle/index.html"); // تغییر URL بدون بارگذاری مجدد
 			break;
 		case "shop":
 			window.location.href = "/EcoStyle/shopPage.html"; // بارگذاری صفحه شاپ
